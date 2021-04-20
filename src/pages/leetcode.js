@@ -2,9 +2,9 @@ import React from 'react';
 
 import Layout from '../components/layout';
 
-const LeetCode = () => {
+const LeetCode = ({ location }) => {
   return (
-    <Layout title='力扣解题'>
+    <Layout title='力扣解题' location={location}>
       <div> 力扣解题 </div>
     </Layout>
   )

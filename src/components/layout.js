@@ -1,21 +1,21 @@
 import * as React from 'react'
+import { Layout } from 'antd';
 
 import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
 
-import '../styles/index.css';
+const { Content } = Layout;
 
-const Layout = ({ title, children }) => {
-
+const CLayout = ({ title, children, location }) => {
   return (
-    <div>
+    <Layout className="layout-container">
       <SEO title={title} />
-      <Header />
-      <div>{children}</div>
+      <Header location={location} />
+      <Content>{children}</Content>
       <Footer/>
-    </div>
+    </Layout>
   )
 };
 
-export default Layout;
+export default CLayout;

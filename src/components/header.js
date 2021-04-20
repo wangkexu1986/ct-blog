@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Menu, Layout, Input, Row, Col } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
-export default function Header() {
+const { Header } = Layout;
+
+const menu = [
+  { name: '主页', href: '/'},
+  { name: '力扣解题', href: '/leetcode' },
+  { name: '读书笔记', href: '/notes' },
+  { name: '规范', href: '/styles' },
+  { name: '好书推荐', href: '/books' },
+];
+
+const CHeader = ({ location }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -13,36 +25,35 @@ export default function Header() {
       }
     `
   );
+  const { pathname } = location || {};
+  const [selectedMenu, setSelectedMenu] = useState(['/']);
+  console.log(3, location, pathname);
+  useEffect(() => {
+    setSelectedMenu([pathname]);
+  }, [pathname]);
   return (
-    <div>
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <h2>{site.siteMetadata.title}</h2>
-        </div>
+    <Header className="header">
+      <Row gutter={24}>
+        <Col span={3} offset={1}>
+          <div className="logo">{site.siteMetadata.title}</div>
+        </Col>
+        <Col span={10}>
+          <Menu mode="horizontal" selectedKeys={selectedMenu}>
+            {menu.map((m) =>
+              <Menu.Item key={m.href}>
+                <Link to={m.href}>{m.name}</Link>
+              </Menu.Item>
+            )}
+          </Menu>
+        </Col>
+        <Col span={10}>
+          <Input size="large" placeholder="检索" prefix={<SearchOutlined />} />
+        </Col>
+      </Row>
 
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-            <Link className="navbar-item" to="/">主页</Link>
-            <Link className="navbar-item" to="/leetcode">力扣解题</Link>
-            <Link className="navbar-item" to="/notes">读书笔记</Link>
-            <Link className="navbar-item" to="/styles">规范</Link>
-            <Link className="navbar-item" to="/books">好书推荐</Link>
-            <Link className="navbar-item" to="/">RSS</Link>
-          </div>
 
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="field">
-                <p className="control has-icons-left has-icons-right">
-                  <input className="input" type="input" placeholder="检索" />
-                  <span className="icon is-small is-left">
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+    </Header>
   )
-}
+};
+
+export default CHeader;
