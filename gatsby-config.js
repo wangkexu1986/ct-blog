@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: "梦创大连CT团队",
+    title: "CT团队",
     description: "技术博客",
     keywords: ["技术", "团队", "React", "前端"]
   },
   pathPrefix: "/ct-blog",
   plugins: [
-    "gatsby-plugin-image",
+    "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
