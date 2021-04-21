@@ -27,7 +27,7 @@ const CHeader = ({ location }) => {
   );
   const { pathname } = location || {};
   const [selectedMenu, setSelectedMenu] = useState(['/']);
-  console.log(3, location, pathname);
+
   useEffect(() => {
     setSelectedMenu([pathname]);
   }, [pathname]);

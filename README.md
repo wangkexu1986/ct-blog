@@ -16,3 +16,7 @@ npm run deploy
 ```
 
 ## 博客书写规范
+
+
+## Markdown Syntax
+https://www.gatsbyjs.com/docs/reference/markdown-syntax/

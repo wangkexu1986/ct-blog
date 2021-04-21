@@ -8,7 +8,36 @@ module.exports = {
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 630,
+            },
+          },
+          {
+            resolve: "gatsby-remark-responsive-iframe",
+            options: {
+              wrapperStyle: "margin-bottom: 1.0725rem",
+            },
+          },
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
+          {
+            resolve: "gatsby-remark-autolink-headers",
+            options: {
+              offsetY: `100`,
+              maintainCase: false,
+              removeAccents: true,
+            },
+          },
+        ],
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
@@ -18,6 +47,13 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: "./content/blog/",
+      },
     }
   ],
 };

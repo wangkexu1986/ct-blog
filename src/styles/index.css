@@ -32,3 +32,10 @@
 	line-height: 55px;
 	text-align: center;
 }
+
+.card {
+	width: 600px;
+	margin: 16px 100px;
+	border: none;
+	height: 150px;
+}

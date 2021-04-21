@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, Layout, Input, Row, Col } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
-
-const { Header } = Layout;
+import React from 'react';
+import { Menu } from 'antd';
 
 const menu = [
+  { name: '全部', key: 'All'},
   { name: 'JavaScript', key: 'JavaScript'},
   { name: 'CSS', key: 'CSS' },
   { name: 'React', key: 'React' },
