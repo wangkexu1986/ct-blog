@@ -5,7 +5,6 @@ description: "CSS 盒模型 定位 布局"
 category: "css"
 ---
 
-## CSS 盒模型
 盒模型指定元素如何显示以及如何相互交互。页面上的每个元素都被看成一个矩形框。
 这个框由内容(content)，内边距(padding)，边框(border)，外边距(margin)组成.
 

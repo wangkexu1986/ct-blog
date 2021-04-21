@@ -5,8 +5,6 @@ description: "CSS如何工作"
 category: "css"
 ---
 
-## CSS如何工作
-
 如何将你的 CSS 应用到你的 HTML 上
 
 ### 外部样式表

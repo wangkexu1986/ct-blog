@@ -52,7 +52,6 @@ export default Index;
 export const pageQuery = graphql`
   query PostQuery {
     allMarkdownRemark(
-      filter: {frontmatter: {category: {eq: "css"}}}
       sort: {fields: frontmatter___date, 
       order: DESC}
     ) {
@@ -60,7 +59,6 @@ export const pageQuery = graphql`
         excerpt
         frontmatter {
           date
-          slug
           title
           category
         }
