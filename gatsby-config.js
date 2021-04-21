@@ -13,6 +13,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              staticFolderName: 'ct-blog/static',
+            },
+          },
+          {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 630,
