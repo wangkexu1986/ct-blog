@@ -12,12 +12,7 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              staticFolderName: 'ct-blog/static',
-            },
-          },
+          "gatsby-remark-relative-images-v2",
           {
             resolve: "gatsby-remark-images",
             options: {
