@@ -6,13 +6,26 @@ module.exports = {
   },
   pathPrefix: "/ct-blog",
   plugins: [
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          "gatsby-remark-relative-images-v2",
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              staticFolderName: 'ct-blog/static',
+            },
+          },
           {
             resolve: "gatsby-remark-images",
             options: {

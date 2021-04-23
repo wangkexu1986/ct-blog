@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'antd';
+import { Row, Col } from 'antd';
 
 import Layout from '../components/layout';
 import FBook1 from "../images/html_and_css.jpeg";
@@ -87,16 +87,16 @@ const Books = ({location}) => {
       {
         books.map(({name, books}) => {
           return (
-            <div key={name}>
-              <div>{name}</div>
-              <Row>
+            <div key={name} className="books">
+              <span className="books-category">{name}</span>
+              <Row span={24}>
                 {
                   books.map(b => {
                     return (
-                      <div key={b.name} style={{padding: 16}}>
-                        <img src={b.img} alt={b.name} width={135} height={ 200 }/>
-                        {/*<h5>{b.name}</h5>*/}
-                      </div>
+                      <Col key={b.name} className="books-name">
+                        <img src={b.img} alt={b.name} />
+                        <div>{b.name}</div>
+                      </Col>
                     )
                   })
                 }

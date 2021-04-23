@@ -9,10 +9,10 @@ const { Content } = Layout;
 
 const CLayout = ({ title, children, location }) => {
   return (
-    <Layout className="layout-container">
+    <Layout>
       <SEO title={title} />
       <Header location={location} />
-      <Content>{children}</Content>
+      <Content className="layout-container">{children}</Content>
       <Footer/>
     </Layout>
   )

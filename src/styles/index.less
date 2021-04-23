@@ -1,23 +1,29 @@
 .layout-container {
-	max-width: 1280px;
+	max-width: 1056px;
 	margin-left: auto;
 	margin-right: auto;
 	background: none;
-	min-width: 1280px;
+	min-width: 1056px;
 	overflow: auto;
+	margin-top: 66px;
 }
 
 .header {
-	position: relative;
 	z-index: 999;
 	width: 100%;
 	background: #fff;
 	box-shadow: 0 2px 8px #f0f1f2;
+	position: fixed;
+}
+
+.header-container {
+	max-width: 1056px;
+	min-width: 1056px;
+	margin: 0 auto !important;
 }
 
 .logo {
 	height: 64px;
-	padding-left: 40px;
 	overflow: hidden;
 	color: rgba(0,0,0,.85);
 	font-size: 18px;
@@ -38,4 +44,32 @@
 	margin: 16px 100px;
 	border: none;
 	height: 150px;
+}
+
+.books {
+	text-align: center;
+	padding: 0 200px;
+	.books-category {
+		text-align: center;
+		font-size: 22px;
+		font-weight: bold;
+		padding: 16px 16px 8px 16px;
+		border-bottom: #722ed1 2px solid;
+		display: inline-block;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
+	.books-name {
+		padding: 12px 6px;
+		width: 20%;
+		img {
+			width: 120px;
+			height: 160px;
+		}
+		div {
+			padding-top: 6px;
+			font-size: 12px;
+		}
+	}
 }
