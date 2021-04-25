@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "CT团队",
@@ -23,7 +27,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-relative-images`,
             options: {
-              staticFolderName: 'ct-blog/static',
+              staticFolderName: `${process.env.GATSBY_SITE_BASE_URL}static`,
             },
           },
           {
@@ -67,6 +71,13 @@ module.exports = {
       options: {
         name: "blog",
         path: "./content/blog/",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "leetcode",
+        path: "./content/leetcode/",
       },
     }
   ],

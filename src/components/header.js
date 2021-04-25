@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Menu, Layout, Input, Row, Col } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import queryString from 'query-string';
 
 const { Header } = Layout;
 

@@ -4,14 +4,16 @@
   "private": true,
   "description": "/ct-blog",
   "scripts": {
-    "start": "./node_modules/.bin/gatsby develop",
-    "build": "./node_modules/.bin/gatsby build",
+    "develop": "./node_modules/.bin/gatsby develop",
+    "start": "NODE_ENV=development npm run develop",
+    "build": "./node_modules/.bin/gatsby build --prefix-paths",
     "serve": "./node_modules/.bin/gatsby serve",
     "clean": "./node_modules/.bin/gatsby clean",
-    "deploy": "./node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "NODE_ENV=production npm run build && gh-pages -d public"
   },
   "dependencies": {
     "antd": "^4.15.2",
+    "dotenv": "^8.2.0",
     "gatsby": "^3.2.1",
     "gatsby-plugin-baidu-analytics": "^2.2.0",
     "gatsby-plugin-google-gtag": "^3.3.0",
@@ -32,6 +34,7 @@
     "moment": "^2.29.1",
     "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
+    "query-string": "^7.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"
