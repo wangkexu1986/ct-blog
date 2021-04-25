@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Menu, Layout, Input, Row, Col } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import queryString from 'query-string';
 
 const { Header } = Layout;
 
 const menu = [
-  { name: '主页', href: '/'},
-  { name: '力扣解题', href: '/leetcode' },
-  { name: '读书笔记', href: '/notes' },
-  { name: '编码规范', href: '/styles' },
-  { name: '好书推荐', href: '/books' },
+  { name: '主页', href: `${process.env.GATSBY_SITE_BASE_URL}`},
+  { name: '力扣解题', href: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
+  { name: '读书笔记', href: `${process.env.GATSBY_SITE_BASE_URL}notes` },
+  { name: '编码规范', href: `${process.env.GATSBY_SITE_BASE_URL}styles` },
+  { name: '好书推荐', href: `${process.env.GATSBY_SITE_BASE_URL}books` },
 ];
 
 const CHeader = ({ location }) => {
