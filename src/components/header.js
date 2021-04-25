@@ -6,11 +6,11 @@ import { SearchOutlined } from '@ant-design/icons';
 const { Header } = Layout;
 
 const menu = [
-  { name: '主页', href: `${process.env.GATSBY_SITE_BASE_URL}`},
-  { name: '力扣解题', href: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
-  { name: '读书笔记', href: `${process.env.GATSBY_SITE_BASE_URL}notes` },
-  { name: '编码规范', href: `${process.env.GATSBY_SITE_BASE_URL}styles` },
-  { name: '好书推荐', href: `${process.env.GATSBY_SITE_BASE_URL}books` },
+  { name: '主页', href: "/", key: `${process.env.GATSBY_SITE_BASE_URL}`},
+  { name: '力扣解题', href: "/leetcode", key: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
+  { name: '读书笔记', href: "/notes", key: `${process.env.GATSBY_SITE_BASE_URL}notes` },
+  { name: '编码规范', href: "/styles", key: `${process.env.GATSBY_SITE_BASE_URL}styles` },
+  { name: '好书推荐', href: "/books", key: `${process.env.GATSBY_SITE_BASE_URL}books` },
 ];
 
 const CHeader = ({ location }) => {
@@ -40,7 +40,7 @@ const CHeader = ({ location }) => {
         <Col span={12}>
           <Menu mode="horizontal" selectedKeys={selectedMenu}>
             {menu.map((m) =>
-              <Menu.Item key={m.href}>
+              <Menu.Item key={m.key}>
                 <Link to={m.href}>{m.name}</Link>
               </Menu.Item>
             )}
