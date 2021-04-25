@@ -1,2 +1,0 @@
-(self.webpackChunkct_blog=self.webpackChunkct_blog||[]).push([[389],{8781:function(e,t,l){"use strict";l.r(t);var n=l(7294),c=l(2035);t.default=function(e){var t=e.location;return n.createElement(c.Z,{title:"好书推荐",location:t},n.createElement("div",null," 好书推荐 "))}}}]);
-//# sourceMappingURL=component---src-pages-books-js-c9486e3fdb455a63e64f.js.map

@@ -1,2 +1,0 @@
-(self.webpackChunkct_blog=self.webpackChunkct_blog||[]).push([[757],{8568:function(e,t,l){"use strict";l.r(t);var n=l(7294),c=l(9630);t.default=function(e){var t=e.location;return n.createElement(c.Z,{title:"读书笔记",location:t},n.createElement("div",null," 读书笔记 "))}}}]);
-//# sourceMappingURL=component---src-pages-notes-js-33e337a096ba5acd6a6d.js.map

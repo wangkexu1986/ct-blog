@@ -1,2 +1,0 @@
-(self.webpackChunkct_blog=self.webpackChunkct_blog||[]).push([[744],{8770:function(e,t,l){"use strict";l.r(t);var n=l(7294),r=l(2035);t.default=function(e){var t=e.data.markdownRemark;return n.createElement(r.Z,null,n.createElement("div",null,n.createElement("h1",null,t.frontmatter.title),n.createElement("div",{dangerouslySetInnerHTML:{__html:t.html}})))}}}]);
-//# sourceMappingURL=component---src-templates-blog-js-5acd23591e88f052aafb.js.map

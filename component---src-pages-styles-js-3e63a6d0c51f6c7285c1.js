@@ -1,2 +1,0 @@
-(self.webpackChunkct_blog=self.webpackChunkct_blog||[]).push([[93],{4686:function(e,t,l){"use strict";l.r(t);var n=l(7294),c=l(967);t.default=function(){return n.createElement(c.Z,{title:"开发规范"},n.createElement("div",null," 开发规范 "))}}}]);
-//# sourceMappingURL=component---src-pages-styles-js-3e63a6d0c51f6c7285c1.js.map

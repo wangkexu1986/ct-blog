@@ -1,2 +1,0 @@
-(self.webpackChunkct_blog=self.webpackChunkct_blog||[]).push([[678],{7704:function(e,t,l){"use strict";l.r(t);var n=l(7294),c=l(967);t.default=function(){return n.createElement(c.Z,{title:"主页"},n.createElement("div",null," 主页 "))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-009bd58cd4ba04ed2c6f.js.map
