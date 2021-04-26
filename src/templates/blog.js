@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import {Space} from "antd";
 import { TagsOutlined, CarryOutOutlined } from '@ant-design/icons';
-import Gitalk from 'gatsby-plugin-gitalk'
-import '@suziwen/gitalk/dist/gitalk.css'
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -30,7 +28,6 @@ const Blog = ({ data }) => {
             <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" />
           </div>
           <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-          <Gitalk options={gitalkConfig}/>
         </div>
         <div className="blog-index">
           <strong>目录</strong>

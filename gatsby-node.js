@@ -4,6 +4,14 @@ const createIndex = require("./src/queries/createIndex");
 const createCategory = require("./src/queries/createCategory");
 const createPost = require("./src/queries/createPost");
 
+exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+  if (getConfig().mode === 'production') {
+    actions.setWebpackConfig({
+      devtool: false
+    });
+  }
+};
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
