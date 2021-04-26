@@ -14,7 +14,7 @@ const CLayout = ({ title, children, location }) => {
       <SEO title={title} />
       <Header location={location} />
       <Content className="layout-container">{children}</Content>
-      <Footer className="footer">CT-Blog ©2021 DAC</Footer>
+      <Footer className="footer">CT-3G 技术博客 ©2021 DAC</Footer>
     </Layout>
   )
 };
