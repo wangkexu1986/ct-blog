@@ -22,7 +22,7 @@ const CNav = (props) => {
     <Menu mode="horizontal" className='nav'>
       {menu.map((m) =>
         <Menu.Item key={m.key}>
-          <Link to={`${process.env.GATSBY_SITE_BASE_URL}blog/${m.key}/1`}>{m.name}</Link>
+          <Link to={`/blog/${m.key}/1`}>{m.name}</Link>
         </Menu.Item>
       )}
     </Menu>
