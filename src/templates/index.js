@@ -1,11 +1,14 @@
 import React from 'react';
-import { List, Space, Card, Statistic } from 'antd';
-import { ArrowUpOutlined, MessageOutlined, LikeOutlined, FontSizeOutlined, FieldTimeOutlined } from '@ant-design/icons';
+import { List, Space } from 'antd';
+import { CarryOutOutlined, MessageOutlined, LikeOutlined, FontSizeOutlined, TagsOutlined } from '@ant-design/icons';
 import { Link, graphql } from "gatsby"
 
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import Pagination from '../components/pagination';
+import G1 from '../components/g1';
+import G2 from '../components/g2';
+import G3 from '../components/g3';
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -27,21 +30,24 @@ const Home = ({ data, location, pageContext }) => {
             dataSource={posts}
             renderItem={item => {
               const post = item.node.childrenMarkdownRemark[0];
-              const { title } = post.frontmatter;
+              const { title, date, tag } = post.frontmatter;
               return (
                 <List.Item
                   key={title}
                   actions={[
-                    <IconText icon={FontSizeOutlined} text={post.wordCount.words || 0} key="list-vertical-word-o" />,
-                    <IconText icon={FieldTimeOutlined} text={post.timeToRead} key="list-vertical-time-o" />,
+                    <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />,
+                    <IconText icon={FontSizeOutlined} text={`${post.wordCount.words || 0} 字`} key="list-vertical-word-o" />,
                     <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
                     <IconText icon={LikeOutlined} text="10" key="list-vertical-link" />,
+                    <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" />,
                   ]}
                 >
-                  <h3>
-                    <Link to={post.fields.slug}>{title}</Link>
-                  </h3>
-                  {post.excerpt}
+                  <div className="blog-title">
+                    <h2 >
+                      <Link to={post.fields.slug}>{title}</Link>
+                    </h2>
+                    <p>{post.excerpt}</p>
+                  </div>
                 </List.Item>
               )}}
           />
@@ -49,6 +55,9 @@ const Home = ({ data, location, pageContext }) => {
         </div>
 
         <div className="blog-graph">
+          <G1/>
+          <G2/>
+          <G3/>
         </div>
       </div>
 
@@ -76,6 +85,7 @@ export const indexQuery = graphql`
             frontmatter {
               date
               title
+              tag
             }
             excerpt
             timeToRead

@@ -2,8 +2,68 @@
 	background: #fff;
 	height: 100%;
 }
-
+.ant-layout-header {
+	height: 52px;
+	line-height: 52px;
+}
 .ant-pagination {
 	text-align: center;
 	padding: 16px;
+}
+
+.ant-menu-item:hover,
+.ant-menu-item-active,
+.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-submenu-active,
+.ant-menu-submenu-title:hover {
+	color: indigo;
+}
+
+.ant-menu-horizontal > .ant-menu-item a:hover {
+	color: indigo;
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+	color: indigo;
+	border-bottom: 2px solid indigo;
+}
+
+.ant-menu-horizontal > .ant-menu-item-selected a {
+	color: indigo;
+}
+
+.ant-input:focus, .ant-input-focused {
+	border-color: indigo;
+	border-right-width: 1px !important;
+	outline: 0;
+	box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+	border-color: indigo;
+	border-right-width: 1px !important;
+	z-index: 1;
+}
+
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+	border-color: indigo;
+	border-right-width: 1px !important;
+	outline: 0;
+	box-shadow: 0 0 0 2px rgb(24 144 255 / 20%);
+}
+
+.ant-pagination-item-active a {
+	color: indigo;
+}
+
+.ant-pagination-item-active {
+	font-weight: 500;
+	border-color: indigo;
 }

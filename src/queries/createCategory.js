@@ -45,7 +45,7 @@ module.exports = async ({ actions, graphql }) => {
           context: {
             limit: BLOG_PAGE_LIMIT,
             skip: index * BLOG_PAGE_LIMIT,
-            total: pageCount,
+            total: postsEdges.length,
             page: pageNumber,
             category: fieldValue,
             pagePath: 'blog',

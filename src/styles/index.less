@@ -1,3 +1,27 @@
+html, body {
+	background: #fff;
+	--antd-wave-shadow-color: indigo;
+}
+
+body {
+	font-size: 14px;
+	line-height: 1.5;
+	font: 400 1em/1.8 Avenir,Tahoma,Arial,PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
+	letter-spacing: 0.1px;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+a {
+	color: #000;
+}
+a:hover {
+	color: indigo;
+}
+a:active {
+	color: indigo;
+}
+
 #___gatsby {
 	height: 100%
 }
@@ -13,6 +37,8 @@
 	background: none;
 	min-width: 1056px;
 	margin-top: 66px;
+	padding-bottom: 60px;
+	display: inline-table;
 }
 
 .header {
@@ -21,6 +47,11 @@
 	background: #fff;
 	box-shadow: 0 2px 8px #f0f1f2;
 	position: fixed;
+	a {
+		font-size: 15px;
+		font-weight: bold;
+		opacity: 0.8;
+	}
 }
 
 .header-container {
@@ -30,27 +61,40 @@
 }
 
 .logo {
-	height: 64px;
+	height: 52px;
 	overflow: hidden;
 	color: rgba(0,0,0,.85);
 	font-size: 18px;
 	font-family: Avenir,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-	line-height: 64px;
+	line-height: 52px;
 	white-space: nowrap;
 	text-decoration: none;
 }
 
 .footer {
+	width: 100%;
+	height: 60px;
+	background: #646d7d;
 	text-align: center;
+	color: #d1d6e1;
+	line-height: 20px;
+	font-size: 12px;
+	font-weight: 400;
 	position: fixed;
 	bottom: 0;
-	width: 100%;
 }
 
 .nav {
 	height: 55px;
 	line-height: 55px;
 	text-align: center;
+
+	a {
+		display: inline-block;
+		border-bottom: 5px solid transparent;
+		color: #555;
+		font-size: 18px;
+	}
 }
 
 .blogs {
@@ -58,7 +102,26 @@
 	display: flex;
 	.blog-content {
 		margin: 0 60px;
-		width: 75%
+		width: 75%;
+		.blog-title {
+			h2 {
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 30px;
+			}
+			p {
+				font-size: 14px;
+				color: #888;
+				line-height: 24px;
+				height: 48px;
+				overflow: hidden;
+				margin-bottom: 14px;
+			}
+		}
+		.ant-list-item:hover {
+			background: #f9fafb;
+			border-radius: 5px;
+		}
 	}
 	.blog-graph {
 		width: 25%
@@ -67,25 +130,65 @@
 
 .blog {
 	padding-bottom: 70px;
-	.blog-title {
-		font-size: 18px;
-		text-align: center;
-		padding: 10px;
-		div {
-			text-align: right;
-			font-size: 12px;
+	width: 100%;
+	display: flex;
+	.blog-body {
+		margin-top: 16px;
+		width: 70%;
+		.blog-title {
+			margin-top: -6px;
+			margin-bottom: 5px;
+			line-height: 48px;
+			font-size: 36px;
+			font-weight: 600;
+			color: #303030;
+		}
+		.blog-icon {
+			margin-top: 10px;
+			display: flex;
+			justify-content: flex-start;
+			height: 20px;
+			font-size: 14px;
+			font-weight: 400;
+			color: #828a92;
+			margin-bottom: 20px;
+		}
+		.blog-content {
+			color: #303030;
+			font-family: Helvetica Neue,PingFang SC,Verdana,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-webkit-tap-highlight-color: rgba(255,255,255,0);
 		}
 	}
-	.blog-body {
-		padding-bottom: 16px;
-		width: 100%;
-		display: flex;
-		.blog-content {
-			width: 70%;
+	.blog-index {
+		margin-top: 60px;
+		width: 30%;
+		opacity: 0.8;
+		ul {
+			padding-inline-start: 16px;
+			list-style-type: none;
+			p {
+				margin-bottom: 0;
+			}
 		}
-		.blog-index {
-			width: 30%;
-		}
+	}
+	.toc-nav a {
+		padding-left: 1em;
+	}
+	.toc-nav .active > a {
+		font-weight: bold;
+	}
+	.toc-nav > li > a:hover,
+	.toc-nav > li > a:focus {
+		text-decoration: none;
+		background-color: transparent;
+		border-left: 1px solid #0e83cd;
+	}
+	.toc-nav > .active > a,
+	.toc-nav > .active:hover > a,
+	.toc-nav > .active:focus > a {
+		background-color: transparent;
+		border-left: 1px solid #e3e3e3;
 	}
 }
 
@@ -97,7 +200,7 @@
 		font-size: 22px;
 		font-weight: bold;
 		padding: 16px 16px 8px 16px;
-		border-bottom: #722ed1 2px solid;
+		border-bottom: #3E3A71 2px solid;
 		display: inline-block;
 		margin-top: 8px;
 		margin-bottom: 8px;
@@ -133,6 +236,9 @@
 			height: 120px;
 		}
 	}
+	a {
+		color: indigo;
+	}
 
 }
 
@@ -141,7 +247,7 @@
 
 	.title {
 		font-size: 20px;
-		border-bottom: #722ed1 solid 1px;
+		border-bottom: indigo solid 1px;
 	}
 
 	.note {
@@ -155,4 +261,11 @@
 	.ant-row {
 		width: 100%;
 	}
+	a {
+		color: indigo;
+	}
+}
+
+.g1, .g2, .g3 {
+	padding: 16px 0;
 }

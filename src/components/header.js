@@ -3,6 +3,8 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Menu, Layout, Input, Row, Col } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
+import Logo from '../images/logo.png';
+
 const { Header } = Layout;
 
 const menu = [
@@ -34,9 +36,11 @@ const CHeader = ({ location }) => {
   return (
     <Header className="header">
       <Row gutter={24} className="header-container">
-        <Col span={3} offset={1}>
+        <Col span={4} offset={1}>
           <div className="logo">
-            <Link to={`/blog/all/1`}>{site.siteMetadata.title}</Link>
+            <Link to={`/blog/all/1`}>
+              <img src={Logo} alt={site.siteMetadata.title} width={120} height={52}/>
+            </Link>
           </div>
         </Col>
         <Col span={12}>
@@ -48,8 +52,8 @@ const CHeader = ({ location }) => {
             )}
           </Menu>
         </Col>
-        <Col span={8}>
-          <Input size="large" placeholder="检索" prefix={<SearchOutlined />} />
+        <Col span={6}>
+          <Input size="middle" placeholder="检索" prefix={<SearchOutlined />} />
         </Col>
       </Row>
     </Header>
