@@ -1,0 +1,2 @@
+(self.webpackChunkct_blog=self.webpackChunkct_blog||[]).push([[883],{9616:function(e,t,l){"use strict";l.r(t);var a=l(7294),n=l(7364),c=l(3751);t.default=function(e){var t=e.data,l=e.location,i=t.site.siteMetadata.title;return a.createElement(n.Z,{location:l,title:i},a.createElement(c.Z,{title:"404: 出错了"}),a.createElement("h1",null,"404: 出错了"),a.createElement("p",null,"您访问的网页不存在！"))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-65926d1ae8480088925d.js.map
