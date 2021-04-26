@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 
 const Blog = ({ data }) => {
   const post = data.markdownRemark;
-  console.log(1, post.tableOfContents);
   return (
     <Layout>
       <div className="blog">
