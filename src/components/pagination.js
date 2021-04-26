@@ -10,7 +10,7 @@ const Page = (props) => {
       total={total}
       pageSize={pageSize}
       onChange={
-        (p) => navigate(`${process.env.GATSBY_SITE_BASE_URL}${pagePath}/${category}/${p}`)}/>
+        (p) => navigate(`/${pagePath}/${category}/${p}`)}/>
   );
 };
 

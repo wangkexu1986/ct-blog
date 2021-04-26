@@ -88,6 +88,19 @@ module.exports = {
         name: "leetcode",
         path: "./content/leetcode/",
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-gitalk`,
+      options: {
+        config: {
+          clientID: '6f8658daa0c7ce851c30',
+          clientSecret: '979249e894c64e5ccf4ce406c3a4a4878e7dc649',
+          repo: 'ct-blog',
+          owner: 'slsay',
+          admin: ['slsay']
+        }
+
+      }
+    },
   ],
 };

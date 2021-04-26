@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "gatsby": "^3.2.1",
     "gatsby-plugin-baidu-analytics": "^2.2.0",
+    "gatsby-plugin-gitalk": "^1.2.2",
     "gatsby-plugin-google-gtag": "^3.3.0",
     "gatsby-plugin-less": "^5.3.0",
     "gatsby-plugin-postcss": "^4.3.0",

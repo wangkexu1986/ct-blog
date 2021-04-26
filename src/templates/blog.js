@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import {Space} from "antd";
 import { TagsOutlined, CarryOutOutlined } from '@ant-design/icons';
+import Gitalk from 'gatsby-plugin-gitalk'
+import '@suziwen/gitalk/dist/gitalk.css'
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -14,6 +16,10 @@ const IconText = ({ icon, text }) => (
 const Blog = ({ data }) => {
   const post = data.markdownRemark;
   const { title, date, tag } = post.frontmatter;
+  const gitalkConfig = {
+    id: post.id,
+    title: title,
+  };
   return (
     <Layout>
       <div className="blog">
@@ -24,6 +30,7 @@ const Blog = ({ data }) => {
             <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" />
           </div>
           <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Gitalk options={gitalkConfig}/>
         </div>
         <div className="blog-index">
           <strong>目录</strong>
@@ -46,6 +53,7 @@ export const query = graphql`
         tag
       }
       tableOfContents
+      id
     }
   }
 `;
