@@ -36,7 +36,7 @@ const CHeader = ({ location }) => {
       <Row gutter={24} className="header-container">
         <Col span={3} offset={1}>
           <div className="logo">
-            <Link to={`${process.env.GATSBY_SITE_BASE_URL}blog/all/1`}>{site.siteMetadata.title}</Link>
+            <Link to={`/blog/all/1`}>{site.siteMetadata.title}</Link>
           </div>
         </Col>
         <Col span={12}>

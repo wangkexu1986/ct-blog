@@ -34,7 +34,7 @@ module.exports = async ({ actions, graphql }) => {
   Array.from({ length: pageCount }).forEach((__value__, index) => {
     const pageNumber = index + 1;
     createPage({
-      path: `${process.env.GATSBY_SITE_BASE_URL}blog/all/${pageNumber}`,
+      path: `/blog/all/${pageNumber}`,
       component: path.resolve(`./src/templates/index.js`),
       context: {
         limit: BLOG_PAGE_LIMIT,
