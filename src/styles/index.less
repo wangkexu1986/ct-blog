@@ -1,10 +1,17 @@
+#___gatsby {
+	height: 100%
+}
+
+#gatsby-focus-wrapper {
+	height: 100%
+}
+
 .layout-container {
 	max-width: 1056px;
 	margin-left: auto;
 	margin-right: auto;
 	background: none;
 	min-width: 1056px;
-	overflow: auto;
 	margin-top: 66px;
 }
 
@@ -33,6 +40,13 @@
 	text-decoration: none;
 }
 
+.footer {
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
 .nav {
 	height: 55px;
 	line-height: 55px;
@@ -48,6 +62,30 @@
 	}
 	.blog-graph {
 		width: 25%
+	}
+}
+
+.blog {
+	padding-bottom: 70px;
+	.blog-title {
+		font-size: 18px;
+		text-align: center;
+		padding: 10px;
+		div {
+			text-align: right;
+			font-size: 12px;
+		}
+	}
+	.blog-body {
+		padding-bottom: 16px;
+		width: 100%;
+		display: flex;
+		.blog-content {
+			width: 70%;
+		}
+		.blog-index {
+			width: 30%;
+		}
 	}
 }
 

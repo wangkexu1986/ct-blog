@@ -1,7 +1,6 @@
 ---
 title: "CSS如何工作"
 date: "2018-11-27"
-description: "CSS如何工作"
 category: "css"
 ---
 

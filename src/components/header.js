@@ -6,7 +6,7 @@ import { SearchOutlined } from '@ant-design/icons';
 const { Header } = Layout;
 
 const menu = [
-  { name: '主页', href: "/", key: `${process.env.GATSBY_SITE_BASE_URL}`},
+  { name: '主页', href: "/blog/all/1", key: `${process.env.GATSBY_SITE_BASE_URL}`},
   { name: '力扣解题', href: "/leetcode", key: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
   { name: '读书笔记', href: "/notes", key: `${process.env.GATSBY_SITE_BASE_URL}notes` },
   { name: '编码规范', href: "/styles", key: `${process.env.GATSBY_SITE_BASE_URL}styles` },
@@ -35,7 +35,9 @@ const CHeader = ({ location }) => {
     <Header className="header">
       <Row gutter={24} className="header-container">
         <Col span={3} offset={1}>
-          <div className="logo">{site.siteMetadata.title}</div>
+          <div className="logo">
+            <Link to={`${process.env.GATSBY_SITE_BASE_URL}blog/all/1`}>{site.siteMetadata.title}</Link>
+          </div>
         </Col>
         <Col span={12}>
           <Menu mode="horizontal" selectedKeys={selectedMenu}>
@@ -50,8 +52,6 @@ const CHeader = ({ location }) => {
           <Input size="large" placeholder="检索" prefix={<SearchOutlined />} />
         </Col>
       </Row>
-
-
     </Header>
   )
 };

@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { Layout } from 'antd';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import SEO from './seo';
 import Header from './header';
-import Footer from './footer';
 
-const { Content } = Layout;
+const { Content, Footer } = Layout;
+deckDeckGoHighlightElement();
 
 const CLayout = ({ title, children, location }) => {
   return (
@@ -13,7 +14,7 @@ const CLayout = ({ title, children, location }) => {
       <SEO title={title} />
       <Header location={location} />
       <Content className="layout-container">{children}</Content>
-      <Footer/>
+      <Footer className="footer">CT-Blog ©2021 DAC</Footer>
     </Layout>
   )
 };

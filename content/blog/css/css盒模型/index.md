@@ -1,7 +1,6 @@
 ---
 title: "CSS 盒模型"
 date: "2018-11-27"
-description: "CSS 盒模型 定位 布局"
 category: "css"
 ---
 

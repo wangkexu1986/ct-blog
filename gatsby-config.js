@@ -25,6 +25,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: `carbon`,
+              lineNumbers: true,
+            },
+          },
+          {
             resolve: `gatsby-remark-relative-images`,
             options: {
               staticFolderName: `${process.env.GATSBY_SITE_BASE_URL}static`,
@@ -42,6 +49,7 @@ module.exports = {
               wrapperStyle: "margin-bottom: 1.0725rem",
             },
           },
+          "gatsby-remark-autolink-headers",
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-smartypants",
@@ -53,6 +61,7 @@ module.exports = {
               removeAccents: true,
             },
           },
+          "gatsby-plugin-use-query-params"
         ],
       },
     },

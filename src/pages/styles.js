@@ -44,7 +44,7 @@ const GuideStyles = ({location}) => {
         <p className="title">统一团队编码风格，提升代码可读性和品质</p>
         { codyStyle.map(style => {
           return (
-            <Col span={12} className="file">
+            <Col span={12} className="file" key={style.name}>
               <Card title={<a href={style.path} target="_blank">{style.name}</a>}>
                 <p>{style.description}</p>
               </Card>

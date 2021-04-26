@@ -1,17 +1,18 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { Link } from 'gatsby';
 
 const menu = [
-  { name: '全部', key: 'All'},
-  { name: 'JavaScript', key: 'JavaScript'},
-  { name: 'CSS', key: 'CSS' },
-  { name: 'React', key: 'React' },
-  { name: 'TypeScript', key: 'TypeScript' },
-  { name: 'Nodejs', key: 'Nodejs' },
-  { name: 'Mongodb', key: 'Mongodb' },
-  { name: 'iOS', key: 'iOS' },
-  { name: 'AWS', key: 'AWS' },
-  { name: 'Linux', key: 'Linux' },
+  { name: '全部', key: 'all'},
+  { name: 'JavaScript', key: 'javascript'},
+  { name: 'CSS', key: 'css' },
+  { name: 'React', key: 'react' },
+  { name: 'TypeScript', key: 'typescript' },
+  { name: 'Nodejs', key: 'nodejs' },
+  { name: 'Mongodb', key: 'mongodb' },
+  { name: 'iOS', key: 'ios' },
+  { name: 'AWS', key: 'aws' },
+  { name: 'Linux', key: 'linux' },
   { name: '工具', key: 'tool' },
   { name: '其他', key: 'other' },
 ];
@@ -20,7 +21,9 @@ const CNav = (props) => {
   return (
     <Menu mode="horizontal" className='nav'>
       {menu.map((m) =>
-        <Menu.Item key={m.key}>{m.name}</Menu.Item>
+        <Menu.Item key={m.key}>
+          <Link to={`${process.env.GATSBY_SITE_BASE_URL}blog/${m.key}/1`}>{m.name}</Link>
+        </Menu.Item>
       )}
     </Menu>
   )

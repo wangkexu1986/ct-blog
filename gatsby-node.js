@@ -1,5 +1,7 @@
 const { createFilePath } = require("gatsby-source-filesystem");
 
+const createIndex = require("./src/queries/createIndex");
+const createCategory = require("./src/queries/createCategory");
 const createPost = require("./src/queries/createPost");
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -15,5 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
+  await createIndex({ actions, graphql });
+  await createCategory({ actions, graphql });
   await createPost({ actions, graphql });
 };

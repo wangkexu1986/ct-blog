@@ -1,7 +1,6 @@
 ---
 title: "CSS 模块化"
-date: "2015-05-01T22:12:03.284Z"
-description: "CSS 模块化"
+date: "2015-05-01"
 category: "css"
 ---
 

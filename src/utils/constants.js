@@ -1,0 +1,1 @@
+exports.BLOG_PAGE_LIMIT = 10;

@@ -5,13 +5,14 @@
   "description": "/ct-blog",
   "scripts": {
     "develop": "./node_modules/.bin/gatsby develop",
-    "start": "NODE_ENV=development npm run develop",
+    "start": "NODE_ENV=development npm run clean && npm run develop",
     "build": "./node_modules/.bin/gatsby build --prefix-paths",
     "serve": "./node_modules/.bin/gatsby serve",
     "clean": "./node_modules/.bin/gatsby clean",
     "deploy": "NODE_ENV=production npm run build && gh-pages -d public"
   },
   "dependencies": {
+    "@deckdeckgo/highlight-code": "^2.6.0",
     "antd": "^4.15.2",
     "dotenv": "^8.2.0",
     "gatsby": "^3.2.1",
@@ -21,8 +22,10 @@
     "gatsby-plugin-postcss": "^4.3.0",
     "gatsby-plugin-react-helmet": "^4.3.0",
     "gatsby-plugin-sharp": "^3.3.1",
+    "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-remark-autolink-headers": "^4.0.0",
     "gatsby-remark-copy-linked-files": "^4.0.0",
+    "gatsby-remark-highlight-code": "^2.2.0",
     "gatsby-remark-images": "^5.0.0",
     "gatsby-remark-prismjs": "^5.0.0",
     "gatsby-remark-relative-images": "^2.0.2",
@@ -37,7 +40,8 @@
     "query-string": "^7.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "use-query-params": "^1.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

@@ -1,4 +1,5 @@
-const path = require(`path`)
+const path = require("path");
+
 module.exports = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const result = await graphql(`
