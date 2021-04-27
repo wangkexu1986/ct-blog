@@ -65,6 +65,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-baidu-analytics`,
+      options: {
+        siteId: "8aa158451cdf5c05f308bcb1289b7fbb",
+        head: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [ "G-JQ8DSC0N9Q" ],
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
