@@ -20,6 +20,7 @@ module.exports = {
     },
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
+    `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -76,6 +77,14 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [ "G-JQ8DSC0N9Q" ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries: require("./src/utils/algolia-queries")
       },
     },
     "gatsby-transformer-sharp",

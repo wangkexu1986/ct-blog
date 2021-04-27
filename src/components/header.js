@@ -3,9 +3,11 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Menu, Layout, Input, Row, Col } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
+import Search from "./search"
 import Logo from '../images/logo.png';
 
 const { Header } = Layout;
+const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const menu = [
   { name: '主页', href: "/blog/all/1", key: `${process.env.GATSBY_SITE_BASE_URL}`},
@@ -53,7 +55,8 @@ const CHeader = ({ location }) => {
           </Menu>
         </Col>
         <Col span={6}>
-          <Input size="middle" placeholder="检索" prefix={<SearchOutlined />} />
+          {/*<Input size="middle" placeholder="检索" prefix={<SearchOutlined />} />*/}
+          <Search indices={searchIndices} />
         </Col>
       </Row>
     </Header>
