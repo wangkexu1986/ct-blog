@@ -20,7 +20,7 @@ export default function Search({ indices }) {
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_KEY
-  )
+  );
 
   useClickOutside(rootRef, () => setFocus(false))
 
