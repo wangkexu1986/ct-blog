@@ -9,7 +9,8 @@
     "build": "./node_modules/.bin/gatsby build --prefix-paths",
     "serve": "./node_modules/.bin/gatsby serve",
     "clean": "./node_modules/.bin/gatsby clean",
-    "deploy": "NODE_ENV=production npm run build && gh-pages -d public"
+    "deploy": "NODE_ENV=production npm run clean && npm run build && gh-pages -d public",
+    "build-test": "NODE_ENV=production npm run clean && npm run build"
   },
   "dependencies": {
     "@deckdeckgo/highlight-code": "2.6.0",
