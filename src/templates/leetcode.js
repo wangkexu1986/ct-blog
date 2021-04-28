@@ -3,8 +3,9 @@ import { List, Typography, Row, Col } from 'antd';
 import { Link, graphql } from "gatsby"
 
 import Layout from '../components/layout';
+import Pagination from '../components/pagination';
 
-const LeetCode = ({ data, location }) => {
+const LeetCode = ({ data, location, pageContext }) => {
   const leetCodeList = data.allFile.edges;
 
   return (
@@ -19,7 +20,7 @@ const LeetCode = ({ data, location }) => {
             <List.Item>
               <Row span={24}>
                 <Col span={20}>
-                  <Typography.Text>[{level}] </Typography.Text><Link to="">{title}</Link>
+                  <Typography.Text>[{level}] </Typography.Text><Link to={item.fields.slug}>{title}</Link>
                 </Col>
                 <Col span={4}>
                   {date}
@@ -29,6 +30,7 @@ const LeetCode = ({ data, location }) => {
             </List.Item>
           )
         }}/>
+      <Pagination path={`${process.env.GATSBY_SITE_BASE_URL}`} {...pageContext} />
     </Layout>
   )
 };
@@ -36,8 +38,10 @@ const LeetCode = ({ data, location }) => {
 export default LeetCode;
 
 export const pageQuery = graphql`
-  query CodeQuery {
+  query CodeQuery($skip:Int!, $limit: Int!) {
     allFile(
+      limit: $limit
+      skip: $skip
       filter: {sourceInstanceName: {eq: "leetcode"}}
       sort: {fields: childrenMarkdownRemark___frontmatter___date, order: DESC}
     ) {

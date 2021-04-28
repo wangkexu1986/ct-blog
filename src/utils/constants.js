@@ -1,1 +1,2 @@
 exports.BLOG_PAGE_LIMIT = 10;
+exports.LEET_CODE_PAGE_LIMIT = 20;

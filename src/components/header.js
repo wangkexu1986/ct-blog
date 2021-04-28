@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { Menu, Layout, Input, Row, Col } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { Menu, Layout, Row, Col } from 'antd';
 
 import Search from "./search"
 import Logo from '../images/logo.png';
@@ -11,7 +10,7 @@ const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const menu = [
   { name: '主页', href: "/blog/all/1", key: `${process.env.GATSBY_SITE_BASE_URL}`},
-  { name: '力扣解题', href: "/leetcode", key: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
+  { name: '力扣解题', href: "/leetcode/1", key: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
   { name: '读书笔记', href: "/notes", key: `${process.env.GATSBY_SITE_BASE_URL}notes` },
   { name: '编码规范', href: "/styles", key: `${process.env.GATSBY_SITE_BASE_URL}styles` },
   { name: '好书推荐', href: "/books", key: `${process.env.GATSBY_SITE_BASE_URL}books` },

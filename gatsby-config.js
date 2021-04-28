@@ -111,5 +111,12 @@ module.exports = {
         path: "./content/leetcode/",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "notes",
+        path: "./content/notes/",
+      },
+    },
   ],
 };

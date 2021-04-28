@@ -17,11 +17,25 @@ npm run deploy
 
 ## 博客书写规范
 必须添加文件头
+```shell script
 ---
 date: "2021-04-21"
 title: "网站草图"
 category: "tool"
+tag: ""
 ---
+```
+
+## 力扣题书写规范
+必须添加文件头
+```shell script
+---
+date: "2021-04-21"
+title: "网站草图"
+level: "简单 | 中等 | 困难
+tag: ""
+---
+```
 
 ## Markdown Syntax
 https://www.gatsbyjs.com/docs/reference/markdown-syntax/

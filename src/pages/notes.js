@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby";
 import { Timeline } from 'antd';
 
 import Layout from '../components/layout';
@@ -48,7 +49,7 @@ const Notes = ({location}) => {
                   n.books.map(b => {
                     return (
                       <Timeline.Item color="purple" label={`${b.date.split('/')[1]}月`} key={b.name}>
-                        <a href={b.path}>{b.name}</a>
+                        <Link to={`/notes/${b.name}/1`}>{b.name}</Link>
                       </Timeline.Item>
                     );
                   })

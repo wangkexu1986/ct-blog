@@ -4,11 +4,13 @@ module.exports = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query {
-      allMarkdownRemark {
+       allFile(filter: {sourceInstanceName: {in: ["leetcode", "blog"]}}) {
         edges {
           node {
-            fields {
-              slug
+            childMarkdownRemark {
+              fields {
+                slug
+              }
             }
           }
         }
@@ -16,14 +18,17 @@ module.exports = async ({ actions, graphql }) => {
     }
   `);
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog.js`),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
+  result.data.allFile.edges.forEach(({ node }) => {
+    if (node.childMarkdownRemark) {
+      const post = node.childMarkdownRemark;
+      createPage({
+        path: post.fields.slug,
+        component: path.resolve(`./src/templates/blog.js`),
+        context: {
+          slug: post.fields.slug,
+        },
+      })
+    }
   })
 };
 

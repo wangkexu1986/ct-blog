@@ -4,13 +4,17 @@ import { navigate } from 'gatsby';
 
 const Page = (props) => {
   const { pagePath, category, page, total, pageSize } = props;
+  let path = `/${pagePath}`;
+  if (category) {
+    path = `/${pagePath}/${category}`;
+  }
   return (
     <Pagination
       current={page}
       total={total}
       pageSize={pageSize}
       onChange={
-        (p) => navigate(`/${pagePath}/${category}/${p}`)}/>
+        (p) => navigate(`${path}/${p}`)}/>
   );
 };
 
