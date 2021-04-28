@@ -147,43 +147,51 @@ data-styled.g4[id="styled-search-root-dylu5e-0"]{content:"daQuOo,"}/*!sc*/
 <li>第三，当处于pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</li>
 </ul>
 <p>如果某些事件不断地反复发生，一般来说，使用 Stream 模式是比部署Promise更好的选择。</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Yay!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//ES6 Promises重写</span>
-<span class="token keyword">var</span> wait1000 <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Yay!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">setTimeout(function(){
+  console.log(&#39;Yay!&#39;);
+}, 1000);</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">//ES6 Promises重写
+var wait1000 =  new Promise(function(resolve, reject) {
+  setTimeout(resolve, 1000);
+}).then(function() {
+  console.log(&#39;Yay!&#39;);
+});
 or
-<span class="token keyword">var</span> wait1000 <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Yay!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+var wait1000 =  new Promise((resolve, reject)=&gt; {
+  setTimeout(resolve, 1000);
+}).then(()=&gt; {
+  console.log(&#39;Yay!&#39;);
+});</code>
+        </deckgo-highlight-code>
 <ul>
 <li>如果我们有更多的嵌套逻辑在setTimeout()回调函数中，我们将发现更多好处：</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Yay!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Wheeyee!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//ES6 Promises重写</span>
-<span class="token keyword">var</span> <span class="token function-variable function">wait1000</span> <span class="token operator">=</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span><span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">wait1000</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Yay!'</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token function">wait1000</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Wheeyee!'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">setTimeout(function(){
+  console.log(&#39;Yay!&#39;);
+  setTimeout(function(){
+    console.log(&#39;Wheeyee!&#39;);
+  }, 1000)
+}, 1000);</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">//ES6 Promises重写
+var wait1000 =  ()=&gt; new Promise((resolve, reject)=&gt; {
+    setTimeout(resolve, 1000)
+  }
+);
+wait1000()
+    .then(function() {
+        console.log(&#39;Yay!&#39;)
+        return wait1000()
+    })
+    .then(function() {
+        console.log(&#39;Wheeyee!&#39;)
+    });</code>
+        </deckgo-highlight-code>
 <ul>
 <li>更多详细的信息关于promise</li>
 <li><a href="http://es6.ruanyifeng.com/#docs/promise">http://es6.ruanyifeng.com/#docs/promise</a></li>
@@ -196,18 +204,20 @@ or
 <li>类的创建和使用真是一件令人头疼的事情在过去的ES5中，因为没有一个关键字class.</li>
 <li>ES6没有用函数, 而是使用原型实现类。我们创建一个类baseModel ，并且在这个类里定义了一个constructor 和一个 getName()方法：</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">baseModel</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// class constructor</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Base'</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">'http://azat.co/api'</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">class baseModel {
+  constructor(options = {}, data = []) { // class constructor
+    this.name = &#39;Base&#39;;
+    this.url = &#39;http://azat.co/api&#39;;
+    this.data = data;
+    this.options = options;
+   }
  
-    <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// class method</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Class name: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre></div>
+    getName() { // class method
+        console.log(`Class name: ${this.name}`);
+    }
+}</code>
+        </deckgo-highlight-code>
 <ul>
 <li>注意我们对options 和data使用了默认参数值。</li>
 <li>此外方法名也不需要加function关键字，而且冒号(：)也不需要了。</li>
@@ -218,86 +228,98 @@ or
 <ul>
 <li>AccountModel 从类baseModel 中而来</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">AccountModel</span> <span class="token keyword">extends</span> <span class="token class-name">baseModel</span> <span class="token punctuation">{</span>
-    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment">//为了调用父级构造函数，可以毫不费力的唤起super()用参数传递：</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token keyword">private</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'32113123123'</span><span class="token punctuation">,</span> <span class="token string">'524214691'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//call the parent method with super</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Account Model'</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>url <span class="token operator">+=</span><span class="token string">'/accounts/'</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">class AccountModel extends baseModel {
+    constructor(options, data) {
+//为了调用父级构造函数，可以毫不费力的唤起super()用参数传递：
+    super({private: true}, [&#39;32113123123&#39;, &#39;524214691&#39;]); //call the parent method with super
+    this.name = &#39;Account Model&#39;;
+    this.url +=&#39;/accounts/&#39;;
+   }
 
-   <span class="token keyword">get</span> <span class="token function">accountsData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//calculated attribute getter</span>
-   <span class="token comment">// 设置accountData 属性</span>
-   <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment">//调用 结果?</span>
-<span class="token keyword">let</span> accounts <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AccountModel</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-accounts<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Data is %s'</span><span class="token punctuation">,</span> accounts<span class="token punctuation">.</span>accountsData<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre></div>
+   get accountsData() { //calculated attribute getter
+   // 设置accountData 属性
+   return this.data;
+   }
+}
+//调用 结果?
+let accounts = new AccountModel(5);
+accounts.getName();
+console.log(&#39;Data is %s&#39;, accounts.accountsData); </code>
+        </deckgo-highlight-code>
 <h2 id="modules" style="position:relative;"><a href="#modules" aria-label="modules permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#modules" aria-label="modules permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modules</h2>
 <h3 id="模块" style="position:relative;"><a href="#%E6%A8%A1%E5%9D%97" aria-label="模块 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%A8%A1%E5%9D%97" aria-label="模块 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>模块</h3>
 <ul>
 <li>在ES6以前JavaScript并不支持本地的模块。人们想出了AMD，RequireJS，CommonJS以及其它解决方法。</li>
 <li>现在ES6中可以用模块import 和export 操作了。</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//在ES5中,module.js有port变量和getAccounts 方法:</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  port<span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">getAccounts</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token operator">...</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">//在ES5中,module.js有port变量和getAccounts 方法:
+module.exports = {
+  port: 3000,
+  getAccounts: function() {
+    ...
+  }
+}
 
-<span class="token comment">//main.js需要依赖require(‘module’) 导入module.js：</span>
-<span class="token keyword">var</span> service <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'module.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>service<span class="token punctuation">.</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3000</span>
-</code></pre></div>
+//main.js需要依赖require(‘module’) 导入module.js：
+var service = require(&#39;module.js&#39;);
+console.log(service.port); // 3000
+</code>
+        </deckgo-highlight-code>
 <ul>
 <li>在ES6中，我们将用export and import模块。</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//用ES6 写的module.js文件库：</span>
-<span class="token keyword">export</span> <span class="token keyword">var</span> port <span class="token operator">=</span> <span class="token number">3000</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getAccounts</span><span class="token punctuation">(</span><span class="token parameter">url</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token operator">...</span>
-<span class="token punctuation">}</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">//用ES6 写的module.js文件库：
+export var port = 3000;
+export function getAccounts(url) {
+  ...
+}
 
-<span class="token comment">//导入到文件main.js中，我们需用import {name} from ‘my-module’语法</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span>port<span class="token punctuation">,</span> getAccounts<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'module'</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3000</span>
+//导入到文件main.js中，我们需用import {name} from ‘my-module’语法
+import {port, getAccounts} from &#39;module&#39;;
+console.log(port); // 3000
 
-<span class="token comment">//或者我们可以在main.js中把整个模块导入, 并命名为 service：</span>
-<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> service <span class="token keyword">from</span> <span class="token string">'module'</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>service<span class="token punctuation">.</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3000</span></code></pre></div>
+//或者我们可以在main.js中把整个模块导入, 并命名为 service：
+import * as service from &#39;module&#39;;
+console.log(service.port); // 3000</code>
+        </deckgo-highlight-code>
 <h2 id="es7" style="position:relative;"><a href="#es7" aria-label="es7 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#es7" aria-label="es7 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ES7</h2>
 <h3 id="arrayprototypeincludes" style="position:relative;"><a href="#arrayprototypeincludes" aria-label="arrayprototypeincludes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#arrayprototypeincludes" aria-label="arrayprototypeincludes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Array.prototype.includes</h3>
 <p>替代indexOf，用来检查数组中是否存在值</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'react'</span><span class="token punctuation">,</span> <span class="token string">'angular'</span><span class="token punctuation">,</span> <span class="token string">'vue'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token comment">// WRONG </span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>       <span class="token comment">// 0 -> evaluates to false, definitely as we expected </span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Can use React'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this line would never be executed </span>
-<span class="token punctuation">}</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let arr = [&#39;react&#39;, &#39;angular&#39;, &#39;vue&#39;];
+// WRONG 
+if (arr.indexOf(&#39;react&#39;)) {       // 0 -&gt; evaluates to false, definitely as we expected 
+    console.log(&#39;Can use React&#39;); // this line would never be executed 
+}
  
-<span class="token comment">// Correct </span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Can use React'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span>
-</code></pre></div>
+// Correct 
+if (arr.indexOf(&#39;react&#39;) !== -1) { 
+console.log(&#39;Can use React&#39;); 
+}
+</code>
+        </deckgo-highlight-code>
 <p>在ES7中使用includes代码如下:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'react'</span><span class="token punctuation">,</span> <span class="token string">'angular'</span><span class="token punctuation">,</span> <span class="token string">'vue'</span><span class="token punctuation">]</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let arr = [&#39;react&#39;, &#39;angular&#39;, &#39;vue&#39;]
 
-<span class="token comment">// Correct</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Can use React'</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre></div>
+// Correct
+if (arr.includes(&#39;react&#39;)) {
+  console.log(&#39;Can use React&#39;)
+}
+</code>
+        </deckgo-highlight-code>
 <p>还能在字符串中使用includes:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'React Quickly'</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let str = &#39;React Quickly&#39;
 
-<span class="token comment">// Correct</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// true</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Found "react"'</span><span class="token punctuation">)</span>  
-<span class="token punctuation">}</span></code></pre></div>
+// Correct
+if (str.toLowerCase().includes(&#39;react&#39;)) {  // true
+  console.log(&#39;Found &quot;react&quot;&#39;)  
+}</code>
+        </deckgo-highlight-code>
 <p>许多JavaScript库已经实现includes或类似功能contains</p>
 <ol>
 <li>jQuery: $.inArray</li>
@@ -310,35 +332,43 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>includes也可以在NaN(非数字)使用。</li>
 <li>includes第二可选参数fromIndex，这对于优化是有好处的，因为它允许从特定位置开始寻找匹配。</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === true) </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === false) </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">NaN</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === true) </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token operator">+</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === true) </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">+</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === true) </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === true) </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// === false)</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">console.log([1, 2, 3].includes(2)) // === true) 
+console.log([1, 2, 3].includes(4)) // === false) 
+console.log([1, 2, NaN].includes(NaN)) // === true) 
+console.log([1, 2, -0].includes(+0)) // === true) 
+console.log([1, 2, +0].includes(-0)) // === true) 
+console.log([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].includes(&#39;a&#39;)) // === true) 
+console.log([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].includes(&#39;a&#39;, 1)) // === false)</code>
+        </deckgo-highlight-code>
 <h3 id="exponentiation-operator求幂运算" style="position:relative;"><a href="#exponentiation-operator%E6%B1%82%E5%B9%82%E8%BF%90%E7%AE%97" aria-label="exponentiation operator求幂运算 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#exponentiation-operator%E6%B1%82%E5%B9%82%E8%BF%90%E7%AE%97" aria-label="exponentiation operator求幂运算 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exponentiation Operator(求幂运算)</h3>
 <ul>
 <li>求幂运算大多数是为开发者做一些数学计算，对于3D，VR，SVG还有数据可视化非常有用。</li>
 <li>在ES6或者早些版本，你不得不创建一个循环，创建一个递归函数或者使用Math.pow,</li>
 <li>如果你忘记了什么是指数,当你有相同数字（基数）自相相乘多次（指数）。例如，7的3次方是7<em>7</em>7</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//在ES6，你能使用Math.pow创建一个短的递归箭头函数</span>
-<span class="token function-variable function">calculateExponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">base<span class="token punctuation">,</span> exponent</span><span class="token punctuation">)</span> <span class="token operator">=></span> base<span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">--</span>exponent<span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token function">calculateExponent</span><span class="token punctuation">(</span>base<span class="token punctuation">,</span> exponent<span class="token punctuation">)</span><span class="token operator">:</span>base<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">calculateExponent</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">calculateExponent</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
-</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">//在ES6，你能使用Math.pow创建一个短的递归箭头函数
+calculateExponent = (base, exponent) =&gt; base*((--exponent&gt;1)?calculateExponent(base, exponent):base) console.log(calculateExponent(7,12) === Math.pow(7,12)) // true 
+console.log(calculateExponent(2,7) === Math.pow(2,7)) // true
+</code>
+        </deckgo-highlight-code>
 <p>在ES7，以数学向导的开发者可以使用更短的语法:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">7</span> <span class="token operator">**</span> <span class="token number">12</span>
-<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token number">7</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let a = 7 ** 12
+let b = 2 ** 7
+console.log(a === Math.pow(7,12)) // true
+console.log(b === Math.pow(2,7)) // true</code>
+        </deckgo-highlight-code>
 <p>开发者还可以操作结果:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">7</span>
-a <span class="token operator">**=</span> <span class="token number">12</span>
-<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">2</span>
-b <span class="token operator">**=</span> <span class="token number">7</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b <span class="token operator">===</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let a = 7
+a **= 12
+let b = 2
+b **= 7
+console.log(a === Math.pow(7,12)) // true
+console.log(b === Math.pow(2,7)) // true</code>
+        </deckgo-highlight-code>
 <p>许多ES新特性是从其他语言模仿而来的。指数运算符在其他语言的存在形式：</p>
 <ul>
 <li>Python: x ** y</li>
@@ -353,66 +383,84 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>开发者可以指定填充的字符串或者使用默认的空格;</li>
 </ul>
 <p>函数的声明如下：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//函数的首个参数为目标长度，即最终生成的字符串长度；</span>
-<span class="token comment">//第二个参数即是指定的填充字符串</span>
-str<span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span>targetLength <span class="token punctuation">[</span><span class="token punctuation">,</span> padString<span class="token punctuation">]</span><span class="token punctuation">)</span>    <span class="token comment">// 在开始部位填充</span>
-str<span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span>targetLength <span class="token punctuation">[</span><span class="token punctuation">,</span> padString<span class="token punctuation">]</span><span class="token punctuation">)</span>      <span class="token comment">// 从字符串的尾端右边开始填充</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">//函数的首个参数为目标长度，即最终生成的字符串长度；
+//第二个参数即是指定的填充字符串
+str.padStart(targetLength [, padString])    // 在开始部位填充
+str.padEnd(targetLength [, padString])      // 从字符串的尾端右边开始填充</code>
+        </deckgo-highlight-code>
 <p>使用空格创建列：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span>         <span class="token comment">// "       react" is 10</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'backbone'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span>         <span class="token comment">// "  backbone" is 10</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">console.log(&#39;react&#39;.padStart(10).length)         // &quot;       react&quot; is 10
+console.log(&#39;backbone&#39;.padStart(10).length)         // &quot;  backbone&quot; is 10</code>
+        </deckgo-highlight-code>
 <p>它对于财务方面非常有用：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'0.00'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'10,000.00'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'250,000.00'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    </code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">console.log(&#39;0.00&#39;.padStart(20))            
+console.log(&#39;10,000.00&#39;.padStart(20))    
+console.log(&#39;250,000.00&#39;.padStart(20))    </code>
+        </deckgo-highlight-code>
 <p>这结果作为一个会计总账格式非常漂亮：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">                <span class="token number">0.00</span>
-           <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">000.00</span>
-          <span class="token number">250</span><span class="token punctuation">,</span><span class="token number">000.00</span></code></pre></div>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 其他字符填充</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>         <span class="token comment">// "_____react"</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'backbone'</span><span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>         <span class="token comment">// "**backbone"</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">                0.00
+           10,000.00
+          250,000.00</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">// 其他字符填充
+console.log(&#39;react&#39;.padStart(10, &#39;_&#39;))         // &quot;_____react&quot;
+console.log(&#39;backbone&#39;.padStart(10, &#39;*&#39;))         // &quot;**backbone&quot;
 
-<span class="token comment">//第二个参数，你能实际上用一个任何长度的字符串。</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">':-)'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>         <span class="token comment">// "react:-):-" is 10 </span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'backbone'</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>         <span class="token comment">// "backbone**" is 10</span></code></pre></div>
+//第二个参数，你能实际上用一个任何长度的字符串。
+console.log(&#39;react&#39;.padEnd(10, &#39;:-)&#39;))         // &quot;react:-):-&quot; is 10 
+console.log(&#39;backbone&#39;.padEnd(10, &#39;*&#39;))         // &quot;backbone**&quot; is 10</code>
+        </deckgo-highlight-code>
 <h3 id="对象值遍历objectvaluesobjectentries" style="position:relative;"><a href="#%E5%AF%B9%E8%B1%A1%E5%80%BC%E9%81%8D%E5%8E%86objectvaluesobjectentries" aria-label="对象值遍历objectvaluesobjectentries permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%AF%B9%E8%B1%A1%E5%80%BC%E9%81%8D%E5%8E%86objectvaluesobjectentries" aria-label="对象值遍历objectvaluesobjectentries permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>对象值遍历Object.values/Object.entries</h3>
 <ul>
 <li>Object.values 函数会返回指定对象的可迭代的属性值数组，数组中值顺序与 for-in 循环保持一致</li>
 <li>Object.values 和Object.keys类似，返回数组类型，其序号和Object.keys序号对应</li>
 </ul>
 <p>函数的声明为：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  <span class="token comment">//参数obj可以为某个对象或者数组（数组可以看做键为下标的对象）</span></code></pre></div>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// ['xxx', 1]</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">Object.values(obj)  //参数obj可以为某个对象或者数组（数组可以看做键为下标的对象）</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">const obj = { x: &#39;xxx&#39;, y: 1 };
+Object.values(obj);             // [&#39;xxx&#39;, 1]
 
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'s'</span><span class="token punctuation">,</span> <span class="token string">'8'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">// same as { 0: 'e', 1: 's', 2: '8' };</span>
-Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment">// ['e', 's', '8']</span>
+const obj = [&#39;e&#39;, &#39;s&#39;, &#39;8&#39;];    // same as { 0: &#39;e&#39;, 1: &#39;s&#39;, 2: &#39;8&#39; };
+Object.values(obj);             // [&#39;e&#39;, &#39;s&#39;, &#39;8&#39;]
 
-<span class="token comment">// when we use numeric keys, the values returned in a numerical </span>
-<span class="token comment">// order according to the keys</span>
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">10</span><span class="token operator">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'yyy'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">:</span> <span class="token string">'zzz'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// ['yyy', 'zzz', 'xxx']</span>
-Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token string">'es8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// ['e', 's', '8']</span></code></pre></div>
+// when we use numeric keys, the values returned in a numerical 
+// order according to the keys
+const obj = { 10: &#39;xxx&#39;, 1: &#39;yyy&#39;, 3: &#39;zzz&#39; };
+Object.values(obj);            // [&#39;yyy&#39;, &#39;zzz&#39;, &#39;xxx&#39;]
+Object.values(&#39;es8&#39;);          // [&#39;e&#39;, &#39;s&#39;, &#39;8&#39;]</code>
+        </deckgo-highlight-code>
 <ul>
 <li>Object.entries 方法则会将某个对象的可迭代属性与值按照二维数组的方式返回</li>
 <li>key-value对数组（作为一个数组），他们（key-value）分别以数组存放数组中。</li>
 <li>Object.entries 数组中顺序与 Object.values 保持一致</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [['x', 'xxx'], ['y', 1]]</span>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">const obj = { x: &#39;xxx&#39;, y: 1 };
+Object.entries(obj); // [[&#39;x&#39;, &#39;xxx&#39;], [&#39;y&#39;, 1]]
 
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'s'</span><span class="token punctuation">,</span> <span class="token string">'8'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [['0', 'e'], ['1', 's'], ['2', '8']]</span>
+const obj = [&#39;e&#39;, &#39;s&#39;, &#39;8&#39;];
+Object.entries(obj); // [[&#39;0&#39;, &#39;e&#39;], [&#39;1&#39;, &#39;s&#39;], [&#39;2&#39;, &#39;8&#39;]]
 
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">10</span><span class="token operator">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'yyy'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">:</span> <span class="token string">'zzz'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [['1', 'yyy'], ['3', 'zzz'], ['10': 'xxx']]</span>
-Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token string">'es8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [['0', 'e'], ['1', 's'], ['2', '8']]</span></code></pre></div>
+const obj = { 10: &#39;xxx&#39;, 1: &#39;yyy&#39;, 3: &#39;zzz&#39; };
+Object.entries(obj); // [[&#39;1&#39;, &#39;yyy&#39;], [&#39;3&#39;, &#39;zzz&#39;], [&#39;10&#39;: &#39;xxx&#39;]]
+Object.entries(&#39;es8&#39;); // [[&#39;0&#39;, &#39;e&#39;], [&#39;1&#39;, &#39;s&#39;], [&#39;2&#39;, &#39;8&#39;]]</code>
+        </deckgo-highlight-code>
 <p>猜一猜，我们同样使用ES6for/of（毕竟全部都是数组）遍历Object.entries返回来的结果值。</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">}</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token comment">//结果?</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let obj = {a: 1, b: 2, c: 3}
+for (let [key, value] of Object.entries(obj)) {
+  console.log(`${key} is ${value}`)
+}
+//结果?</code>
+        </deckgo-highlight-code>
 <h3 id="对象的属性描述符获取" style="position:relative;"><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%8E%B7%E5%8F%96" aria-label="对象的属性描述符获取 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%8E%B7%E5%8F%96" aria-label="对象的属性描述符获取 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>对象的属性描述符获取</h3>
 <p><strong>Object.getOwnPropertyDescriptors</strong></p>
 <ul>
@@ -420,81 +468,99 @@ Object<span class="token punctuation">.</span><span class="token function">entri
 <li>该属性必须是对象自己定义而不是继承自原型链</li>
 </ul>
 <p>函数的声明为：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptor</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> prop<span class="token punctuation">)</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">Object.getOwnPropertyDescriptor(obj, prop)</code>
+        </deckgo-highlight-code>
 <p>obj 即为源对象，而 prop 即为需要查看的属性名；结果中包含的键可能有 configurable、enumerable、writable、get、set 以及 value。</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> azatsBooks <span class="token operator">=</span> <span class="token punctuation">{</span> 
-  books<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'React Quickly'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
-  <span class="token keyword">get</span> <span class="token function">latest</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">let</span> numberOfBooks <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>books<span class="token punctuation">.</span>length 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>numberOfBooks <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">undefined</span> 
-    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>books<span class="token punctuation">[</span>numberOfBooks <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> 
-  <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let azatsBooks = { 
+  books: [&#39;React Quickly&#39;], 
+  get latest () { 
+    let numberOfBooks = this.books.length 
+    if (numberOfBooks == 0) return undefined 
+    return this.books[numberOfBooks - 1] 
+  } 
+}</code>
+        </deckgo-highlight-code>
 <p>数据描述符books由Object.getOwnPropertyDescriptor(azatsBooks, ‘books’)产生结果如下：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">Object
-    configurable<span class="token operator">:</span> <span class="token boolean">true</span>
-    enumerable<span class="token operator">:</span> <span class="token boolean">true</span>
-    value<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-    writable<span class="token operator">:</span> <span class="token boolean">true</span>
-    __proto__<span class="token operator">:</span> Object</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">Object
+    configurable: true
+    enumerable: true
+    value: Array[1]
+    writable: true
+    __proto__: Object</code>
+        </deckgo-highlight-code>
 <p>Object.getOwnPropertyDescriptor(azatsBooks, ‘latest’)将会展现latest的描述符，这个latest（get）存取器描述符展现如下：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">Object
-    configurable<span class="token operator">:</span> <span class="token boolean">true</span>
-    numerable<span class="token operator">:</span> <span class="token boolean">true</span>
-    get<span class="token operator">:</span> <span class="token function">latest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    set<span class="token operator">:</span> <span class="token keyword">undefined</span>
-    __proto__<span class="token operator">:</span> Object</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">Object
+    configurable: true
+    numerable: true
+    get: latest()
+    set: undefined
+    __proto__: Object</code>
+        </deckgo-highlight-code>
 <p>现在我们调用新方法获取所有的描述符：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getOwnPropertyDescriptors</span><span class="token punctuation">(</span>azatsBooks<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">console.log(Object.getOwnPropertyDescriptors(azatsBooks))</code>
+        </deckgo-highlight-code>
 <p>它会给出这个对象两个描述符books和latest：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">Object 
-  books<span class="token operator">:</span> Object 
-    configurable<span class="token operator">:</span> <span class="token boolean">true</span> 
-    enumerable<span class="token operator">:</span> <span class="token boolean">true</span> 
-    value<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> 
-    writable<span class="token operator">:</span> <span class="token boolean">true</span> 
-    __proto__<span class="token operator">:</span> Object 
-  latest<span class="token operator">:</span> Object 
-    configurable<span class="token operator">:</span> <span class="token boolean">true</span> 
-    enumerable<span class="token operator">:</span> <span class="token boolean">true</span> 
-    get<span class="token operator">:</span> <span class="token function">latest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
-    set<span class="token operator">:</span> <span class="token keyword">undefined</span> 
-    __proto__<span class="token operator">:</span> Object 
-  __proto__<span class="token operator">:</span> Object
-</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">Object 
+  books: Object 
+    configurable: true 
+    enumerable: true 
+    value: Array[1] 
+    writable: true 
+    __proto__: Object 
+  latest: Object 
+    configurable: true 
+    enumerable: true 
+    get: latest() 
+    set: undefined 
+    __proto__: Object 
+  __proto__: Object
+</code>
+        </deckgo-highlight-code>
 <h3 id="函数参数列表和调用中的尾逗号" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E5%92%8C%E8%B0%83%E7%94%A8%E4%B8%AD%E7%9A%84%E5%B0%BE%E9%80%97%E5%8F%B7" aria-label="函数参数列表和调用中的尾逗号 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E5%92%8C%E8%B0%83%E7%94%A8%E4%B8%AD%E7%9A%84%E5%B0%BE%E9%80%97%E5%8F%B7" aria-label="函数参数列表和调用中的尾逗号 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数参数列表和调用中的尾逗号</h3>
 <ul>
 <li>尾逗号在函数定义中只是一个纯粹语法变化</li>
 <li>该特性允许我们在定义或者调用函数时添加尾部逗号而不报错：</li>
 </ul>
 <p>在ES5中，将会非法语法，在函数参数后面应该是没有逗号的：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>
-  b<span class="token punctuation">,</span>
-  c<span class="token punctuation">,</span>
-  d</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// NO COMMA!</span>
-  <span class="token comment">// ...</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'this'</span><span class="token punctuation">)</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">var f = function(a,
+  b,
+  c,
+  d) { // NO COMMA!
+  // ...
+  console.log(d)
+}
+f(1,2,3,&#39;this&#39;)</code>
+        </deckgo-highlight-code>
 <p>在ES8中，这种尾逗号是没有问题的：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>
-  b<span class="token punctuation">,</span>
-  c<span class="token punctuation">,</span>
-  d<span class="token punctuation">,</span></span>
-<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// COMMA? OK!</span>
-  <span class="token comment">// ...</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'this'</span><span class="token punctuation">)</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">var f = function(a,
+  b,
+  c,
+  d,
+) { // COMMA? OK!
+  // ...
+  console.log(d)
+}
+f(1,2,3,&#39;this&#39;)</code>
+        </deckgo-highlight-code>
 <p>现在，函数中尾逗号是向数组（ES3）中和字面量对象（ES5）中尾逗号看齐。</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment">// Length == 3</span>
-  <span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token number">3</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span>  <span class="token comment">// &lt;--- ok</span>
-<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>  <span class="token comment">// Only 3 properties</span>
-  b<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-  c<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>  <span class="token comment">// &lt;--- ok</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">var arr = [1,  // Length == 3
+  2,
+  3,
+]  // &lt;--- ok
+let obj = {a: 1,  // Only 3 properties
+  b: 2,
+  c: 3,
+}  // &lt;--- ok</code>
+        </deckgo-highlight-code>
 <p>现在你可以到处使用逗号，甚至最后参数都可以啦。</p>
 <h3 id="异步函数" style="position:relative;"><a href="#%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0" aria-label="异步函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0" aria-label="异步函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>异步函数</h3>
 <ul>
@@ -503,60 +569,68 @@ Object<span class="token punctuation">.</span><span class="token function">entri
 <li>在这引擎之下一个异步函数返回一个Promise，无论如何你在任何地方不会看到这样的一个词</li>
 </ul>
 <p>在ES6中我们可以使用Promise，Axios库向GraphQL服务器发送一个请求：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/q?query=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>query<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> 
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=></span> response<span class="token punctuation">.</span>data<span class="token punctuation">)</span> 
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-    <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">processfetchedData</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token comment">// Defined somewhere else </span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span> 
-  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">axios.get(`/q?query=${query}`) 
+  .then(response =&gt; response.data) 
+  .then(data =&gt; { 
+    this.props.processfetchedData(data) // Defined somewhere else 
+  }) 
+  .catch(error =&gt; console.log(error))
+</code>
+        </deckgo-highlight-code>
 <p>任何一个Promise库都能兼容新的异步函数，我们可以使用同步try/catch做错误处理。</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token parameter">url</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-  <span class="token keyword">try</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/q?query=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>query<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> data <span class="token operator">=</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span> 
-    <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">processfetchedData</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-  <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span>
-</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">async fetchData(url) =&gt; { 
+  try { 
+    const response = await axios.get(`/q?query=${query}`);
+    const data = response.data; 
+    this.props.processfetchedData(data); 
+  } catch (error) { 
+    console.log(error); 
+  } 
+}
+</code>
+        </deckgo-highlight-code>
 <p>异步函数返回一个Promise，所以我们像下面可以继续执行流程:</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-  <span class="token keyword">try</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/q?query=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>query<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> 
-    <span class="token keyword">const</span> data <span class="token operator">=</span> response<span class="token punctuation">.</span>data 
-    <span class="token keyword">return</span> data 
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> 
-  <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span> 
-<span class="token function">fetchData</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-  <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">processfetchedData</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> 
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre></div>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> axios <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token comment">// mocks </span>
-  <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-      <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token operator">:</span> x<span class="token punctuation">}</span><span class="token punctuation">)</span> 
-    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span> 
-  <span class="token punctuation">}</span><span class="token punctuation">)</span> 
-<span class="token punctuation">}</span><span class="token punctuation">}</span> 
-<span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token string">'mangos'</span> 
-<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-  <span class="token keyword">try</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/q?query=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>query<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span> 
-    <span class="token keyword">const</span> data <span class="token operator">=</span> response<span class="token punctuation">.</span>data 
-    <span class="token keyword">return</span> data 
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> 
-  <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span> 
-<span class="token function">fetchData</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">{</span> 
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token comment">// Got data 2s later... Can use data! </span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">async fetchData(query) =&gt; { 
+  try { 
+    const response = await axios.get(`/q?query=${query}`) 
+    const data = response.data 
+    return data 
+  } catch (error) { 
+    console.log(error) 
+  } 
+} 
+fetchData(query).then(data =&gt; { 
+  this.props.processfetchedData(data) 
+})
+</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">let axios = { // mocks 
+  get: function(x) { 
+  return new Promise(resolve =&gt; { 
+    setTimeout(() =&gt; { 
+      resolve({data: x}) 
+    }, 2000) 
+  }) 
+}} 
+let query = &#39;mangos&#39; 
+async function fetchData(query) { 
+  try { 
+    const response = await axios.get(`/q?query=${query}`) 
+    const data = response.data 
+    return data 
+  } catch (error) { 
+    console.log(error) 
+  } 
+} 
+fetchData(query).then(data =&gt; { 
+  console.log(data) // Got data 2s later... Can use data! 
+})
+</code>
+        </deckgo-highlight-code>
 <p>有了 async/await,我们的代码执行异步看起来像执行同步一样。</p></div></div><div class="blog-index"><strong>目录</strong><div class="toc-nav"><ul>
 <li>
 <p><a href="#es6%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95_2">ES6基本用法_2</a></p>

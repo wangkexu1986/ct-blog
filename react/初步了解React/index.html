@@ -176,12 +176,14 @@ data-styled.g4[id="styled-search-root-dylu5e-0"]{content:"daQuOo,"}/*!sc*/
 <img src="https://github.com/DreamArts/dac-3g-portal/blob/master/reactImages/react5.png" alt="React5"></p>
 <p>这项技术正是 React 名字的由来。使用 React 构建的 UI 是响应式的。作为开发者，你只需编写你想要的是什么，React 自己会弄清楚该怎么做。当数据变化时，UI 会相应地发生改变。你无需再关心 DOM 的更新，React 会自动帮你完成。响应式 UI 的理念大大地简化了 UI 开发。</p>
 <p>请查看下面的示例(尝试更换 Domo 的帽子)):</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">ThinkerWithHat</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> hat <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
-  <span class="token operator">&lt;</span>div<span class="token operator">></span>
-    <span class="token operator">&lt;</span>Hat type<span class="token operator">=</span><span class="token punctuation">{</span>hat<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>Thinker <span class="token operator">/</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
+          <code slot="code">const ThinkerWithHat = ({ hat }) =&gt; (
+  &lt;div&gt;
+    &lt;Hat type={hat} /&gt;
+    &lt;Thinker /&gt;
+  &lt;/div&gt;
+);</code>
+        </deckgo-highlight-code>
 <p>注意，你只需定义你想要的 (戴帽子的思想者)，并“连接”上数据 (“type = {hat}”) 。当数据发生变化时 (用户选择一顶帽子)，UI 会自动更新。</p>
 <h3 id="虚拟-dom" style="position:relative;"><a href="#%E8%99%9A%E6%8B%9F-dom" aria-label="虚拟 dom permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E8%99%9A%E6%8B%9F-dom" aria-label="虚拟 dom permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>虚拟 DOM</h3>
 <p>jQuery 的另一个问题就是它的运行速度。</p>
