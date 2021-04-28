@@ -52,7 +52,6 @@ function G3() {
       postCount[year][month] += 1;
     }
   });
-  console.log(postCount);
   return (
     <div className="g3">
       <Card title="月投稿统计" extra={

@@ -47,7 +47,6 @@ function G2() {
       postCount[year][week] += 1;
     }
   });
-  console.log(postCount);
   return (
     <div className="g2">
       <Card title="周投稿统计" extra={
