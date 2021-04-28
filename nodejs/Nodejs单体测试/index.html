@@ -189,64 +189,58 @@ data-styled.g4[id="styled-search-root-dylu5e-0"]{content:"daQuOo,"}/*!sc*/
 </ul>
 <h2 id="两种测试方式" style="position:relative;"><a href="#%E4%B8%A4%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E5%BC%8F" aria-label="两种测试方式 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E4%B8%A4%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E5%BC%8F" aria-label="两种测试方式 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>两种测试方式</h2>
 <p>从测试的角度来检验整个项目</p>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">module.exports = function (n) {
-  if (n &lt; 0) return NaN;
-  if (n === 0) return 1;
-  return n * factorial(n - 1);
-};</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">NaN</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> n <span class="token operator">*</span> <span class="token function">factorial</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <h3 id="tdd-测试驱动开发" style="position:relative;"><a href="#tdd-%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" aria-label="tdd 测试驱动开发 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#tdd-%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" aria-label="tdd 测试驱动开发 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TDD-测试驱动开发</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">var assert = require(&#39;assert&#39;),
-    factorial = require(&#39;../index&#39;);
-suite(&#39;Test&#39;, function (){
-  setup(function (){
-    // Create any objects that we might need
-  });
-  suite(&#39;#factorial()&#39;, function (){
-    test(&#39;equals 1 for sets of zero length&#39;, function (){
-      assert.equal(1, factorial(0));
-    });
-    test(&#39;equals 1 for sets of length one&#39;, function (){
-      assert.equal(1, factorial(1));
-    });
-    test(&#39;equals 2 for sets of length two&#39;, function (){
-      assert.equal(2, factorial(2));
-    });
-    test(&#39;equals 6 for sets of length three&#39;, function (){
-      assert.equal(6, factorial(3));
-    });
-  });
-});</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    factorial <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../index'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">suite</span><span class="token punctuation">(</span><span class="token string">'Test'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// Create any objects that we might need</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">suite</span><span class="token punctuation">(</span><span class="token string">'#factorial()'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'equals 1 for sets of zero length'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'equals 1 for sets of length one'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'equals 2 for sets of length two'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'equals 6 for sets of length three'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <h3 id="bdd-行为驱动开发" style="position:relative;"><a href="#bdd-%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" aria-label="bdd 行为驱动开发 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#bdd-%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" aria-label="bdd 行为驱动开发 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BDD-行为驱动开发</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">var assert = require(&#39;assert&#39;),
-    factorial = require(&#39;../index&#39;);
-describe(&#39;Test&#39;, function (){
-  before(function(){
-    // Stuff to do before the tests, like imports, what not
-  });
-  describe(&#39;#factorial()&#39;, function (){
-    it(&#39;should return 1 when given 0&#39;, function (){
-      factorial(0).should.equal(1);
-    });
-    it(&#39;should return 1 when given 1&#39;, function (){
-      factorial(1).should.equal(1);
-    });
-    it(&#39;should return 2 when given 2&#39;, function (){
-      factorial(2).should.equal(2);
-    });
-    it(&#39;should return 6 when given 3&#39;, function (){
-      factorial(3).should.equal(6);
-    });
-  });
-  after(function () {
-    // Anything after the tests have finished
-  });
-});</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    factorial <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../index'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Test'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">before</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// Stuff to do before the tests, like imports, what not</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'#factorial()'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return 1 when given 0'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>should<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return 1 when given 1'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>should<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return 2 when given 2'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>should<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return 6 when given 3'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">factorial</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>should<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">after</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Anything after the tests have finished</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <h2 id="单体测试测什么" style="position:relative;"><a href="#%E5%8D%95%E4%BD%93%E6%B5%8B%E8%AF%95%E6%B5%8B%E4%BB%80%E4%B9%88" aria-label="单体测试测什么 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%8D%95%E4%BD%93%E6%B5%8B%E8%AF%95%E6%B5%8B%E4%BB%80%E4%B9%88" aria-label="单体测试测什么 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>单体测试测什么</h2>
 <h3 id="接口" style="position:relative;"><a href="#%E6%8E%A5%E5%8F%A3" aria-label="接口 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%8E%A5%E5%8F%A3" aria-label="接口 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>接口</h3>
 <ul>
@@ -277,31 +271,27 @@ describe(&#39;Test&#39;, function (){
 <ul>
 <li>Dummy Objects (傀儡对象)</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">it(`should have getTitle() to return &#39;todos&#39;`, () =&gt; {
-  const dummy = {
-    lang: &#39;en-us&#39;
-  };
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">it</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">should have getTitle() to return 'todos'</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> dummy <span class="token operator">=</span> <span class="token punctuation">{</span>
+    lang<span class="token operator">:</span> <span class="token string">'en-us'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
   
-  const target = new TitleComponent();  
-  expect(target.getTitle(dummy)).toBe(&#39;todos&#39;);
-});</code>
-        </deckgo-highlight-code>
+  <span class="token keyword">const</span> target <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TitleComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  <span class="token function">expect</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span>dummy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'todos'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>Stub (测试桩)</li>
 <li>Spy (测试间谍)</li>
 <li>Fake objects (伪造对象)</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">it(`should use getTitle()`, () =&gt; {
-  spyOn(component, &#39;getTitle&#39;).and.callFake(() =&gt; &#39;fake&#39;);
-  fixture.detectChanges();
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">it</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">should use getTitle()</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">spyOn</span><span class="token punctuation">(</span>component<span class="token punctuation">,</span> <span class="token string">'getTitle'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>and<span class="token punctuation">.</span><span class="token function">callFake</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token string">'fake'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fixture<span class="token punctuation">.</span><span class="token function">detectChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  htmlElement = debugElement.query(By.css(&#39;h1&#39;)).nativeElement;
+  htmlElement <span class="token operator">=</span> debugElement<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>By<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>nativeElement<span class="token punctuation">;</span>
   
-  expect(htmlElement.textContent).toBe(&#39;fake&#39;);
-});</code>
-        </deckgo-highlight-code>
+  <span class="token function">expect</span><span class="token punctuation">(</span>htmlElement<span class="token punctuation">.</span>textContent<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'fake'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>Mocks (模拟对象)</li>
 </ul>
@@ -336,32 +326,31 @@ describe(&#39;Test&#39;, function (){
 </ul>
 <h2 id="单体测试的编码规约" style="position:relative;"><a href="#%E5%8D%95%E4%BD%93%E6%B5%8B%E8%AF%95%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E7%BA%A6" aria-label="单体测试的编码规约 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%8D%95%E4%BD%93%E6%B5%8B%E8%AF%95%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E7%BA%A6" aria-label="单体测试的编码规约 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>单体测试的编码规约</h2>
 <h3 id="目录-1" style="position:relative;"><a href="#%E7%9B%AE%E5%BD%95-1" aria-label="目录 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E7%9B%AE%E5%BD%95-1" aria-label="目录 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>目录</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">test
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">test
 ├── data
 │   ├── db
-│   │   └── init.js                 // DB初期化数据
+│   │   └── init<span class="token punctuation">.</span>js                 <span class="token comment">// DB初期化数据</span>
 │   └── img
-│       ├── YUKARi.ipa
-│       └── YUKARi.png
+│       ├── YUKARi<span class="token punctuation">.</span>ipa
+│       └── YUKARi<span class="token punctuation">.</span>png
 ├── e2e
-│   ├── nightwatch.json
+│   ├── nightwatch<span class="token punctuation">.</span>json
 │   └── specs
-│       └── e2e_spec_sample.js
-├── readme.md                      // DB数据说明
+│       └── e2e_spec_sample<span class="token punctuation">.</span>js
+├── readme<span class="token punctuation">.</span>md                      <span class="token comment">// DB数据说明</span>
 ├── reports
 │   └── UnitCoverage
-│       ├── coverage.json
-│       ├── lcov-report
-│       └── lcov.info
+│       ├── coverage<span class="token punctuation">.</span>json
+│       ├── lcov<span class="token operator">-</span>report
+│       └── lcov<span class="token punctuation">.</span>info
 ├── restapi
 │   └── specs
-│       └── restapi_spec_appstore.js
+│       └── restapi_spec_appstore<span class="token punctuation">.</span>js
 └── unit
-    ├── TestCommon.js              // 共通方法
-    ├── TestInit.js                // 测试之前的db初期化
-    ├── TestLoader.js              // 加载测试代码
-    ├── TestMock.js                // req，res，loginUser等的mock
+    ├── TestCommon<span class="token punctuation">.</span>js              <span class="token comment">// 共通方法</span>
+    ├── TestInit<span class="token punctuation">.</span>js                <span class="token comment">// 测试之前的db初期化</span>
+    ├── TestLoader<span class="token punctuation">.</span>js              <span class="token comment">// 加载测试代码</span>
+    ├── TestMock<span class="token punctuation">.</span>js                <span class="token comment">// req，res，loginUser等的mock</span>
     ├── api
     │   └── admin
     ├── controllers
@@ -369,35 +358,30 @@ describe(&#39;Test&#39;, function (){
     │   └── new_content
     └── models
         ├── new_content
-        └── test_mod_s3_common.js</code>
-        </deckgo-highlight-code>
+        └── test_mod_s3_common<span class="token punctuation">.</span>js</code></pre></div>
 <h3 id="代码" style="position:relative;"><a href="#%E4%BB%A3%E7%A0%81" aria-label="代码 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E4%BB%A3%E7%A0%81" aria-label="代码 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代码</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">&quot;use strict&quot;;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
 
-var should      = require(&quot;should&quot;)
-  , simple      = require(&quot;simple-mock&quot;) //异常对象mock
-  , faker       = require(&quot;mockjs&quot;) // 数据生成
-  , Common      = require(&quot;../../TestCommon&quot;)
-  , mock        = require(&quot;../../TestMock&quot;)
-  , ctrlUser    = require(&quot;../../../../controllers/admin/ctrl_user&quot;)
-  , modUser     = require(&quot;../../../../models/admin/mod_user&quot;);
+<span class="token keyword">var</span> should      <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"should"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">,</span> simple      <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"simple-mock"</span><span class="token punctuation">)</span> <span class="token comment">//异常对象mock</span>
+  <span class="token punctuation">,</span> faker       <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"mockjs"</span><span class="token punctuation">)</span> <span class="token comment">// 数据生成</span>
+  <span class="token punctuation">,</span> Common      <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"../../TestCommon"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">,</span> mock        <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"../../TestMock"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">,</span> ctrlUser    <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"../../../../controllers/admin/ctrl_user"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">,</span> modUser     <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"../../../../models/admin/mod_user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-describe(&quot;Controllers User&quot;, function() {
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">"Controllers User"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-  /***********************************************/
-  describe(&quot;测试方法名&quot;, function() {
-    it(&quot;测试用例描述&quot;, function(done) {
-      done();
-    });
-  });
-});</code>
-        </deckgo-highlight-code>
+  <span class="token comment">/***********************************************/</span>
+  <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">"测试方法名"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"测试用例描述"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">done</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <h3 id="执行" style="position:relative;"><a href="#%E6%89%A7%E8%A1%8C" aria-label="执行 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%89%A7%E8%A1%8C" aria-label="执行 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>执行</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">npm run-script test-unit
-npm run-script test-mocha</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">npm run<span class="token operator">-</span>script test<span class="token operator">-</span>unit
+npm run<span class="token operator">-</span>script test<span class="token operator">-</span>mocha</code></pre></div>
 <h3 id="报告" style="position:relative;"><a href="#%E6%8A%A5%E5%91%8A" aria-label="报告 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%8A%A5%E5%91%8A" aria-label="报告 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>报告</h3>
 <ul>
 <li>mocha测试结果报告</li>
@@ -424,43 +408,41 @@ npm run-script test-mocha</code>
 <blockquote>
 <p>如果才能确定一个参数是正确的?</p>
 </blockquote>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let 参数A = 未知的值
-if (参数A有值) {
-   if (typeos 参数A) {
-      if (参数A是合法的值) {
-         // 参数A如果需要再DB中校验
-         if (参数A在DB中存在) {
-            // 业务逻辑判断
-            // 。。。
-            console.log(&quot;参数A是合法的值&quot;)
-         } else {
-            console.log(&quot;参数A在DB中不存在&quot;)
-         }
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> 参数<span class="token constant">A</span> <span class="token operator">=</span> 未知的值
+<span class="token keyword">if</span> <span class="token punctuation">(</span>参数<span class="token constant">A</span>有值<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>typeos 参数<span class="token constant">A</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>参数<span class="token constant">A</span>是合法的值<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token comment">// 参数A如果需要再DB中校验</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>参数<span class="token constant">A</span>在<span class="token constant">DB</span>中存在<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 业务逻辑判断</span>
+            <span class="token comment">// 。。。</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A是合法的值"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A在DB中不存在"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span>
 
-         // 业务逻辑判断
-         if (参数A满足业务需求) {
-           console.log(&quot;参数A是合法的值&quot;)
-         } else {
-            console.log(&quot;参数A不正确&quot;)
-         }
+         <span class="token comment">// 业务逻辑判断</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>参数<span class="token constant">A</span>满足业务需求<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A是合法的值"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A不正确"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span>
 
-         // 权限判断
-         if (参数A有次权限) {
-           console.log(&quot;参数A是合法的值&quot;)
-         } else {
-           console.log(&quot;参数A没有权限&quot;)
-         }
-      } else {
-        console.log(&quot;参数A不是一个合法的值（非法字段，长度，边界等）&quot;);
-      }
-   } else {
-      console.log(&quot;参数A类型不正确&quot;);
-   }
-} else {
-   console.log(“参数A没有值”);
-}</code>
-        </deckgo-highlight-code></div></div><div class="blog-index"><strong>目录</strong><div class="toc-nav"><ul>
+         <span class="token comment">// 权限判断</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>参数<span class="token constant">A</span>有次权限<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A是合法的值"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A没有权限"</span><span class="token punctuation">)</span>
+         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A不是一个合法的值（非法字段，长度，边界等）"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"参数A类型不正确"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>“参数<span class="token constant">A</span>没有值”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div></div></div><div class="blog-index"><strong>目录</strong><div class="toc-nav"><ul>
 <li>
 <p><a href="#nodejs-%E5%8D%95%E4%BD%93%E6%B5%8B%E8%AF%95">nodejs 单体测试</a></p>
 <ul>

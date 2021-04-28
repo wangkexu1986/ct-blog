@@ -134,425 +134,365 @@ data-styled.g4[id="styled-search-root-dylu5e-0"]{content:"daQuOo,"}/*!sc*/
 <li>const用来定义常量,相当于java中的final关键字.</li>
 <li>const声明常量之后必须立即初始化.</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">const PI = 3.1415;
-console.log(PI);  // 3.1415
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3.1415</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">PI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 3.1415</span>
 
-PI = 3;           // TypeError: Assignment to constant variable.</code>
-        </deckgo-highlight-code>
+<span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>           <span class="token comment">// TypeError: Assignment to constant variable.</span></code></pre></div>
 <h3 id="let" style="position:relative;"><a href="#let" aria-label="let permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#let" aria-label="let permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>let</h3>
 <ul>
 <li>ES6 新增了let命令，用来声明变量。</li>
 <li>块级作用域,只在let命令所在的代码块内有效。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//ES6
-{
-  var a = 5;
-  let b = 6;
-}
-console.log(a);       //5
-//console.log(b);     //ReferenceError: b is undefined</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//ES6</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//5</span>
+<span class="token comment">//console.log(b);     //ReferenceError: b is undefined</span></code></pre></div>
 <ul>
 <li>for循环的计数器，就很合适使用let命令。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">for (let i = 0; i &lt; 3; i++) {
-  let i = &#39;abc&#39;;
-  console.log(i);      
-}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token string">'abc'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>      
+<span class="token punctuation">}</span>
 
-console.log(i);      // ReferenceError: i is not defined</code>
-        </deckgo-highlight-code>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">// ReferenceError: i is not defined</span></code></pre></div>
 <ul>
 <li>不存在变量提升</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">console.log(c);            //undefined
-var c=8;
-console.log(&quot;----------&quot;);
-console.log(d);            //ReferenceError: d is not defined
-let d=9;</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">//undefined</span>
+<span class="token keyword">var</span> c<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">//ReferenceError: d is not defined</span>
+<span class="token keyword">let</span> d<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>暂时性死区（temporal dead zone，简称 TDZ）</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">var tmp = 123;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
 
-if (true) {
-  tmp = &#39;abc&#39;;   // ReferenceError: tmp is not defined
-  let tmp;
-}</code>
-        </deckgo-highlight-code>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  tmp <span class="token operator">=</span> <span class="token string">'abc'</span><span class="token punctuation">;</span>   <span class="token comment">// ReferenceError: tmp is not defined</span>
+  <span class="token keyword">let</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h2 id="解构" style="position:relative;"><a href="#%E8%A7%A3%E6%9E%84" aria-label="解构 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E8%A7%A3%E6%9E%84" aria-label="解构 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>解构</h2>
 <ul>
 <li>模式匹配,ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//变量赋值
-let a = 1;
-let b = 2;
-let c = 3;
-// ES6 解构赋值
-let [a, b, c] = [1, 2, 3];</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//变量赋值</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token comment">// ES6 解构赋值</span>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
 <h3 id="数组的解构赋值" style="position:relative;"><a href="#%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="数组的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%95%B0%E7%BB%84%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="数组的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数组的解构赋值</h3>
 <ul>
 <li>可以从数组中提取值，按照对应位置，对变量赋值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let [foo, [[bar], baz]] = [1, [[2], 3]];
-foo // 1
-bar // 2
-baz // 3
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span>foo<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>bar<span class="token punctuation">]</span><span class="token punctuation">,</span> baz<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+foo <span class="token comment">// 1</span>
+bar <span class="token comment">// 2</span>
+baz <span class="token comment">// 3</span>
 
-let [ , , third] = [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;];
-third // &quot;baz&quot;
+<span class="token keyword">let</span> <span class="token punctuation">[</span> <span class="token punctuation">,</span> <span class="token punctuation">,</span> third<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token string">"baz"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+third <span class="token comment">// "baz"</span>
 
-let [x, , y] = [1, 2, 3];
-x // 1
-y // 3
+<span class="token keyword">let</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> <span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+x <span class="token comment">// 1</span>
+y <span class="token comment">// 3</span>
 
-let [head, ...tail] = [1, 2, 3, 4];
-head // 1
-tail // [2, 3, 4]
+<span class="token keyword">let</span> <span class="token punctuation">[</span>head<span class="token punctuation">,</span> <span class="token operator">...</span>tail<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+head <span class="token comment">// 1</span>
+tail <span class="token comment">// [2, 3, 4]</span>
 
-let [x, y, ...z] = [&#39;a&#39;];
-x // &quot;a&quot;
-y // undefined
-z // []</code>
-        </deckgo-highlight-code>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> <span class="token operator">...</span>z<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+x <span class="token comment">// "a"</span>
+y <span class="token comment">// undefined</span>
+z <span class="token comment">// []</span></code></pre></div>
 <ul>
 <li>默认值,解构赋值允许指定默认值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let [foo = true] = [];
-foo // true
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span>foo <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+foo <span class="token comment">// true</span>
 
-let [x, y = &#39;b&#39;] = [&#39;a&#39;]; // x=&#39;a&#39;, y=&#39;b&#39;
-let [x, y = &#39;b&#39;] = [&#39;a&#39;, undefined]; // x=&#39;a&#39;, y=&#39;b&#39;
+<span class="token keyword">let</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token string">'b'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// x='a', y='b'</span>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token string">'b'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// x='a', y='b'</span>
 
-function f() {
-  console.log(&#39;aaa&#39;);   
-}
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'aaa'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+<span class="token punctuation">}</span>
 
-let [x = f()] = [1];   // 会输出aaa吗?</code>
-        </deckgo-highlight-code>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>x <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">// 会输出aaa吗?</span></code></pre></div>
 <h3 id="对象的解构赋值" style="position:relative;"><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="对象的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="对象的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>对象的解构赋值</h3>
 <ul>
 <li>对象的解构与数组有一个重要的不同。</li>
 <li>数组的元素是按次序排列的，变量的取值由它的位置决定；</li>
 <li>而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let { bar, foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
-foo // &quot;aaa&quot;
-bar // &quot;bbb&quot;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">{</span> bar<span class="token punctuation">,</span> foo <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">"aaa"</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">"bbb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+foo <span class="token comment">// "aaa"</span>
+bar <span class="token comment">// "bbb"</span>
 
-let { baz } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
-baz // undefined</code>
-        </deckgo-highlight-code>
+<span class="token keyword">let</span> <span class="token punctuation">{</span> baz <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">"aaa"</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">"bbb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+baz <span class="token comment">// undefined</span></code></pre></div>
 <ul>
 <li>如果变量名与属性名不一致，必须写成下面这样。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let { foo: baz } = { foo: &#39;aaa&#39;, bar: &#39;bbb&#39; };
-baz // &quot;aaa&quot;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> baz <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span> foo<span class="token operator">:</span> <span class="token string">'aaa'</span><span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token string">'bbb'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+baz <span class="token comment">// "aaa"</span>
 
-let obj = { first: &#39;hello&#39;, last: &#39;world&#39; };
-let { first: f, last: l } = obj;
-f // &#39;hello&#39;
-l // &#39;world&#39;</code>
-        </deckgo-highlight-code>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> first<span class="token operator">:</span> <span class="token string">'hello'</span><span class="token punctuation">,</span> last<span class="token operator">:</span> <span class="token string">'world'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">{</span> first<span class="token operator">:</span> f<span class="token punctuation">,</span> last<span class="token operator">:</span> l <span class="token punctuation">}</span> <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+f <span class="token comment">// 'hello'</span>
+l <span class="token comment">// 'world'</span></code></pre></div>
 <h3 id="字符串的结构赋值" style="position:relative;"><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%BB%93%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="字符串的结构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%BB%93%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="字符串的结构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>字符串的结构赋值</h3>
 <ul>
 <li>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">const [a, b, c, d, e] = &#39;hello&#39;;
-a // &quot;h&quot;
-b // &quot;e&quot;
-c // &quot;l&quot;
-d // &quot;l&quot;
-e // &quot;o&quot;</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> e<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+a <span class="token comment">// "h"</span>
+b <span class="token comment">// "e"</span>
+c <span class="token comment">// "l"</span>
+d <span class="token comment">// "l"</span>
+e <span class="token comment">// "o"</span></code></pre></div>
 <ul>
 <li>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let {length : len} = &#39;hello&#39;;
-len // 5</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">{</span>length <span class="token operator">:</span> len<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+len <span class="token comment">// 5</span></code></pre></div>
 <h3 id="函数参数的解构赋值" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="函数参数的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="函数参数的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数参数的解构赋值</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">function add([x, y]){
-  return x + y;
-}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-add([1, 2]); // 3</code>
-        </deckgo-highlight-code>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span></code></pre></div>
 <ul>
 <li>也可以使用默认值</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">function move({x = 0, y = 0} = {}) {
-  return [x, y];
-}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-move({x: 3, y: 8}); // [3, 8]
-move({x: 3}); // [3, 0]
-move({}); // [0, 0]
-move(); // [0, 0]
-</code>
-        </deckgo-highlight-code>
+<span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [3, 8]</span>
+<span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">{</span>x<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [3, 0]</span>
+<span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [0, 0]</span>
+<span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [0, 0]</span>
+</code></pre></div>
 <h2 id="模板字符串" style="position:relative;"><a href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" aria-label="模板字符串 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" aria-label="模板字符串 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>模板字符串</h2>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">// ES5 输出模板
-$(&#39;#result&#39;).append(
-  &#39;There are &lt;b&gt;&#39; + basket.count + &#39;&lt;/b&gt; &#39; +
-  &#39;items in your basket, &#39; +
-  &#39;&lt;em&gt;&#39; + basket.onSale +
-  &#39;&lt;/em&gt; are on sale!&#39;
-);
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// ES5 输出模板</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#result'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>
+  <span class="token string">'There are &lt;b>'</span> <span class="token operator">+</span> basket<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token string">'&lt;/b> '</span> <span class="token operator">+</span>
+  <span class="token string">'items in your basket, '</span> <span class="token operator">+</span>
+  <span class="token string">'&lt;em>'</span> <span class="token operator">+</span> basket<span class="token punctuation">.</span>onSale <span class="token operator">+</span>
+  <span class="token string">'&lt;/em> are on sale!'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// ES6
-$(&#39;#result&#39;).append(`
-  There are &lt;b&gt;${basket.count}&lt;/b&gt; items
-   in your basket, &lt;em&gt;${basket.onSale}&lt;/em&gt;
+<span class="token comment">// ES6</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#result'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  There are &lt;b></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>basket<span class="token punctuation">.</span>count<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/b> items
+   in your basket, &lt;em></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>basket<span class="token punctuation">.</span>onSale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/em>
   are on sale!
-`);</code>
-        </deckgo-highlight-code>
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>模板字符串采用反引号（`）标识，并且模板字符串中的空格、换行将在输出时有所保留。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">// 普通字符串
-`In JavaScript &#39;\n&#39; is a line-feed.`
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 普通字符串</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">In JavaScript '\n' is a line-feed.</span><span class="token template-punctuation string">`</span></span>
 
-// 多行字符串
-`In JavaScript this is
- not legal.`
+<span class="token comment">// 多行字符串</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">In JavaScript this is
+ not legal.</span><span class="token template-punctuation string">`</span></span>
 
-console.log(`string text line 1
-string text line 2`);
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">string text line 1
+string text line 2</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 字符串中嵌入变量
-let name = &quot;Bob&quot;, time = &quot;today&quot;;
-`Hello ${name}, how are you ${time}?`</code>
-        </deckgo-highlight-code>
+<span class="token comment">// 字符串中嵌入变量</span>
+<span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> time <span class="token operator">=</span> <span class="token string">"today"</span><span class="token punctuation">;</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, how are you </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>time<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">?</span><span class="token template-punctuation string">`</span></span></code></pre></div>
 <ul>
 <li>${主体}，其中主体可以是表达式、运算、对象属性还可以是函数，若是字符串将直接输出该字符串。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let x = 1;
-let y = 2;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
-`${x} + ${y} = ${x + y}`
-// &quot;1 + 2 = 3&quot;
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>x<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>y<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>x <span class="token operator">+</span> y<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token comment">// "1 + 2 = 3"</span>
 
-`${x} + ${y * 2} = ${x + y * 2}`
-// &quot;1 + 4 = 5&quot;
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>x<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> + </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>y <span class="token operator">*</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>x <span class="token operator">+</span> y <span class="token operator">*</span> <span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token comment">// "1 + 4 = 5"</span>
 
-let obj = {x: 1, y: 2};
-`${obj.x + obj.y}`
-// &quot;3&quot;
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj<span class="token punctuation">.</span>x <span class="token operator">+</span> obj<span class="token punctuation">.</span>y<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token comment">// "3"</span>
 
-function fn() {
-  return &quot;Hello World&quot;;
-}
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-`foo ${fn()} bar`
-// foo Hello World bar</code>
-        </deckgo-highlight-code>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">foo </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> bar</span><span class="token template-punctuation string">`</span></span>
+<span class="token comment">// foo Hello World bar</span></code></pre></div>
 <h2 id="函数" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0" aria-label="函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0" aria-label="函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数</h2>
 <h3 id="函数参数的默认值" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC" aria-label="函数参数的默认值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC" aria-label="函数参数的默认值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数参数的默认值</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">// ES5
-function log(x, y) {
-  y = y || &#39;World&#39;;
-  console.log(x, y);
-}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// ES5</span>
+<span class="token keyword">function</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  y <span class="token operator">=</span> y <span class="token operator">||</span> <span class="token string">'World'</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// ES6
-function log(x, y = &#39;World&#39;) {
-  console.log(x, y);
-}
+<span class="token comment">// ES6</span>
+<span class="token keyword">function</span> <span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token string">'World'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-log(&#39;Hello&#39;) // Hello World
-log(&#39;Hello&#39;, &#39;China&#39;) // Hello China
-log(&#39;Hello&#39;, &#39;&#39;) // Hello</code>
-        </deckgo-highlight-code>
+<span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span> <span class="token comment">// Hello World</span>
+<span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token string">'China'</span><span class="token punctuation">)</span> <span class="token comment">// Hello China</span>
+<span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token comment">// Hello</span></code></pre></div>
 <ul>
 <li>参数变量是默认声明的，所以不能用let或const再次声明。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">function foo(x = 5) {
-  let x = 1; // error
-  const x = 2; // error
-}</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">x <span class="token operator">=</span> <span class="token number">5</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// error</span>
+  <span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// error</span>
+<span class="token punctuation">}</span></code></pre></div>
 <ul>
 <li>使用参数默认值时，函数不能有同名参数。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">// 不报错
-function foo(x, x, y) {
-  // ...
-}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 不报错</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
 
-// 报错
-function foo(x, x, y = 1) {
-  // ...
-}
-// SyntaxError: Duplicate parameter name not allowed in this context</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let x = 99;
-function foo(p = x + 1) {
-  console.log(p);
-}
+<span class="token comment">// 报错</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">1</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// SyntaxError: Duplicate parameter name not allowed in this context</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">p <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-foo() // ?
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// ?</span>
 
-x = 100;
-foo() // ?</code>
-        </deckgo-highlight-code>
+x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// ?</span></code></pre></div>
 <h3 id="箭头函数" style="position:relative;"><a href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0" aria-label="箭头函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0" aria-label="箭头函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>箭头函数</h3>
 <ul>
 <li>不需要function关键字来创建函数</li>
 <li>省略return关键字</li>
 <li>继承当前上下文的 this 关键字</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//例如： 
-[1,2,3].map( x =&gt; x + 1 )
-//等同于： 
-[1,2,3].map((function(x){ return x + 1 }).bind(this))</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//例如： </span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span> <span class="token parameter">x</span> <span class="token operator">=></span> x <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">)</span>
+<span class="token comment">//等同于： </span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div>
 <h2 id="拓展的对象功能" style="position:relative;"><a href="#%E6%8B%93%E5%B1%95%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%8A%9F%E8%83%BD" aria-label="拓展的对象功能 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%8B%93%E5%B1%95%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%8A%9F%E8%83%BD" aria-label="拓展的对象功能 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>拓展的对象功能</h2>
 <h3 id="属性的简洁表示法" style="position:relative;"><a href="#%E5%B1%9E%E6%80%A7%E7%9A%84%E7%AE%80%E6%B4%81%E8%A1%A8%E7%A4%BA%E6%B3%95" aria-label="属性的简洁表示法 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%B1%9E%E6%80%A7%E7%9A%84%E7%AE%80%E6%B4%81%E8%A1%A8%E7%A4%BA%E6%B3%95" aria-label="属性的简洁表示法 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>属性的简洁表示法</h3>
 <ul>
 <li>ES6 允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">const foo = &#39;bar&#39;;
-const baz = {foo};
-baz // {foo: &quot;bar&quot;}
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">'bar'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> baz <span class="token operator">=</span> <span class="token punctuation">{</span>foo<span class="token punctuation">}</span><span class="token punctuation">;</span>
+baz <span class="token comment">// {foo: "bar"}</span>
 
-// 等同于
-const baz = {foo: foo};</code>
-        </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">// 另一个例子
-function f(x, y) {
-  return {x, y};
-}
+<span class="token comment">// 等同于</span>
+<span class="token keyword">const</span> baz <span class="token operator">=</span> <span class="token punctuation">{</span>foo<span class="token operator">:</span> foo<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 另一个例子</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>x<span class="token punctuation">,</span> y<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 等同于
+<span class="token comment">// 等同于</span>
 
-function f(x, y) {
-  return {x: x, y: y};
-}
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>x<span class="token operator">:</span> x<span class="token punctuation">,</span> y<span class="token operator">:</span> y<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-f(1, 2) // Object {x: 1, y: 2}</code>
-        </deckgo-highlight-code>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// Object {x: 1, y: 2}</span></code></pre></div>
 <ul>
 <li>除了属性简写,方法也可以简写</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">let birth = &#39;2000/01/01&#39;;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">let</span> birth <span class="token operator">=</span> <span class="token string">'2000/01/01'</span><span class="token punctuation">;</span>
 
-const Person = {
+<span class="token keyword">const</span> Person <span class="token operator">=</span> <span class="token punctuation">{</span>
 
-  name: &#39;张三&#39;,
+  name<span class="token operator">:</span> <span class="token string">'张三'</span><span class="token punctuation">,</span>
 
-  //等同于birth: birth
-  birth,
+  <span class="token comment">//等同于birth: birth</span>
+  birth<span class="token punctuation">,</span>
 
-  // 等同于hello: function ()...
-  hello() { console.log(&#39;我的名字是&#39;, this.name); }
+  <span class="token comment">// 等同于hello: function ()...</span>
+  <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的名字是'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-};</code>
-        </deckgo-highlight-code>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <h2 id="展开运算符" style="position:relative;"><a href="#%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6" aria-label="展开运算符 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6" aria-label="展开运算符 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>展开运算符</h2>
 <ul>
 <li>ES2018 将这个扩展运算符（…）引入了对象</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">const [a, ...b] = [1, 2, 3];
-a // 1
-b // [2, 3]</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> <span class="token operator">...</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a <span class="token comment">// 1</span>
+b <span class="token comment">// [2, 3]</span></code></pre></div>
 <h3 id="组装对象或者数组" style="position:relative;"><a href="#%E7%BB%84%E8%A3%85%E5%AF%B9%E8%B1%A1%E6%88%96%E8%80%85%E6%95%B0%E7%BB%84" aria-label="组装对象或者数组 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E7%BB%84%E8%A3%85%E5%AF%B9%E8%B1%A1%E6%88%96%E8%80%85%E6%95%B0%E7%BB%84" aria-label="组装对象或者数组 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>组装对象或者数组</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//数组
-const color = [&#39;red&#39;, &#39;yellow&#39;]
-const colorful = [...color, &#39;green&#39;, &#39;pink&#39;]
-console.log(colorful) //[red, yellow, green, pink]
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//数组</span>
+<span class="token keyword">const</span> color <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'yellow'</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> colorful <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>color<span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'pink'</span><span class="token punctuation">]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>colorful<span class="token punctuation">)</span> <span class="token comment">//[red, yellow, green, pink]</span>
     
-//对象
-const alp = { fist: &#39;a&#39;, second: &#39;b&#39;}
-const alphabets = { ...alp, third: &#39;c&#39; }
-console.log(alphabets) //{ &quot;fist&quot;: &quot;a&quot;, &quot;second&quot;: &quot;b&quot;, &quot;third&quot;: &quot;c&quot;</code>
-        </deckgo-highlight-code>
+<span class="token comment">//对象</span>
+<span class="token keyword">const</span> alp <span class="token operator">=</span> <span class="token punctuation">{</span> fist<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span> second<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">}</span>
+<span class="token keyword">const</span> alphabets <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>alp<span class="token punctuation">,</span> third<span class="token operator">:</span> <span class="token string">'c'</span> <span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>alphabets<span class="token punctuation">)</span> <span class="token comment">//{ "fist": "a", "second": "b", "third": "c"</span></code></pre></div>
 <h3 id="获取数组或者对象除了前几项或者除了某几项的其他项" style="position:relative;"><a href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%88%96%E8%80%85%E5%AF%B9%E8%B1%A1%E9%99%A4%E4%BA%86%E5%89%8D%E5%87%A0%E9%A1%B9%E6%88%96%E8%80%85%E9%99%A4%E4%BA%86%E6%9F%90%E5%87%A0%E9%A1%B9%E7%9A%84%E5%85%B6%E4%BB%96%E9%A1%B9" aria-label="获取数组或者对象除了前几项或者除了某几项的其他项 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%88%96%E8%80%85%E5%AF%B9%E8%B1%A1%E9%99%A4%E4%BA%86%E5%89%8D%E5%87%A0%E9%A1%B9%E6%88%96%E8%80%85%E9%99%A4%E4%BA%86%E6%9F%90%E5%87%A0%E9%A1%B9%E7%9A%84%E5%85%B6%E4%BB%96%E9%A1%B9" aria-label="获取数组或者对象除了前几项或者除了某几项的其他项 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取数组或者对象除了前几项或者除了某几项的其他项</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//数组
-const number = [1,2,3,4,5]
-const [first, ...rest] = number
-console.log(rest) //2,3,4,5
-//对象
-const user = {
-    username: &#39;lux&#39;,
-    gender: &#39;female&#39;,
-    age: 19,
-    address: &#39;peking&#39;
-}
-const { username, ...rest } = user
-console.log(rest) //{&quot;address&quot;: &quot;peking&quot;, &quot;age&quot;: 19, &quot;gender&quot;: &quot;female&quot;</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//数组</span>
+<span class="token keyword">const</span> number <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>first<span class="token punctuation">,</span> <span class="token operator">...</span>rest<span class="token punctuation">]</span> <span class="token operator">=</span> number
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rest<span class="token punctuation">)</span> <span class="token comment">//2,3,4,5</span>
+<span class="token comment">//对象</span>
+<span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token punctuation">{</span>
+    username<span class="token operator">:</span> <span class="token string">'lux'</span><span class="token punctuation">,</span>
+    gender<span class="token operator">:</span> <span class="token string">'female'</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
+    address<span class="token operator">:</span> <span class="token string">'peking'</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> username<span class="token punctuation">,</span> <span class="token operator">...</span>rest <span class="token punctuation">}</span> <span class="token operator">=</span> user
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rest<span class="token punctuation">)</span> <span class="token comment">//{"address": "peking", "age": 19, "gender": "female"</span></code></pre></div>
 <h3 id="组合成新的对象" style="position:relative;"><a href="#%E7%BB%84%E5%90%88%E6%88%90%E6%96%B0%E7%9A%84%E5%AF%B9%E8%B1%A1" aria-label="组合成新的对象 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E7%BB%84%E5%90%88%E6%88%90%E6%96%B0%E7%9A%84%E5%AF%B9%E8%B1%A1" aria-label="组合成新的对象 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>组合成新的对象</h3>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">const first = {
-    a: 1,
-    b: 2,
-    c: 6,
-}
-const second = {
-    c: 3,
-    d: 4
-}
-const total = { ...first, ...second }
-console.log(total) // { a: 1, b: 2, c: 3, d: 4 } //重复属性名,右边覆盖左边</code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> first <span class="token operator">=</span> <span class="token punctuation">{</span>
+    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    b<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    c<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> second <span class="token operator">=</span> <span class="token punctuation">{</span>
+    c<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    d<span class="token operator">:</span> <span class="token number">4</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>first<span class="token punctuation">,</span> <span class="token operator">...</span>second <span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span> <span class="token comment">// { a: 1, b: 2, c: 3, d: 4 } //重复属性名,右边覆盖左边</span></code></pre></div>
 <h2 id="export和import" style="position:relative;"><a href="#export%E5%92%8Cimport" aria-label="export和import permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#export%E5%92%8Cimport" aria-label="export和import permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>export和import</h2>
 <ul>
 <li>export用于对外输出本模块（一个文件可以理解为一个模块）变量的接口</li>
 <li>import用于在一个模块中加载另一个含有export接口的模块。</li>
 <li>也就是说使用export命令定义了模块的对外接口以后，其他JS文件就可以通过import命令加载这个模块（文件）。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//全部导入
-import people from &#39;./example&#39;
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//全部导入</span>
+<span class="token keyword">import</span> people <span class="token keyword">from</span> <span class="token string">'./example'</span>
 
-//有一种特殊情况，即允许你将整个模块当作单一对象进行导入
-//该模块的所有导出都会作为对象的属性存在
-import * as example from &quot;./example.js&quot;
-console.log(example.name)
-console.log(example.age)
-console.log(example.getName())
+<span class="token comment">//有一种特殊情况，即允许你将整个模块当作单一对象进行导入</span>
+<span class="token comment">//该模块的所有导出都会作为对象的属性存在</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> example <span class="token keyword">from</span> <span class="token string">"./example.js"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>example<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>example<span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>example<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-//导入部分
-import {name, age} from &#39;./example&#39;
+<span class="token comment">//导入部分</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span> age<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./example'</span>
 
-// 导出默认, 有且只有一个默认
-export default App
+<span class="token comment">// 导出默认, 有且只有一个默认</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> App
 
-// 部分导出
-export class App extend Component {};</code>
-        </deckgo-highlight-code>
+<span class="token comment">// 部分导出</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">App</span> extend Component <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <ul>
 <li>导入的时候有没有大括号的区别是什么?</li>
 </ul>
@@ -567,38 +507,32 @@ export class App extend Component {};</code>
 <ul>
 <li>为了解决导出命名冲突的问题，ES6为你提供了重命名的方法解决这个问题</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">import {flip as flipOmelet} from &quot;eggs.js&quot;;  
-import {flip as flipHouse} from &quot;real-estate.js&quot;;  </code>
-        </deckgo-highlight-code>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>flip <span class="token keyword">as</span> flipOmelet<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"eggs.js"</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token punctuation">{</span>flip <span class="token keyword">as</span> flipHouse<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"real-estate.js"</span><span class="token punctuation">;</span>  </code></pre></div>
 <ul>
 <li>同样，当你在导出的时候也可以重命名。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">v1() { ... }  
-v2() { ... }  
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">v1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>  
+<span class="token function">v2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>  
   
-export {  
-  v1 as streamV1,  
-  v2 as streamV2,  
-  v2 as streamLatestVersion  
-};</code>
-        </deckgo-highlight-code>
+<span class="token keyword">export</span> <span class="token punctuation">{</span>  
+  v1 <span class="token keyword">as</span> streamV1<span class="token punctuation">,</span>  
+  v2 <span class="token keyword">as</span> streamV2<span class="token punctuation">,</span>  
+  v2 <span class="token keyword">as</span> streamLatestVersion  
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <h3 id="作为中转模块导出" style="position:relative;"><a href="#%E4%BD%9C%E4%B8%BA%E4%B8%AD%E8%BD%AC%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%87%BA" aria-label="作为中转模块导出 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E4%BD%9C%E4%B8%BA%E4%B8%AD%E8%BD%AC%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%87%BA" aria-label="作为中转模块导出 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>作为中转模块导出</h3>
 <ul>
 <li>有时候为了避免上层模块导入太多的模块，我们可能使用底层模块作为中转，直接导出另一个模块的内容如下：</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" line-numbers="true"  highlight-lines="">
-          <code slot="code">//------ myFunc.js ------  
-export default function() {...};  
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">//------ myFunc.js ------  </span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  
       
-//------ lib.js ------  
-export * from &#39;myFunc&#39;;  
-export function each() {...};  
+<span class="token comment">//------ lib.js ------  </span>
+<span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">'myFunc'</span><span class="token punctuation">;</span>  
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">each</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  
       
-//------ main.js ------  
-import myFunc,{ each } from &#39;lib&#39;;  </code>
-        </deckgo-highlight-code></div></div><div class="blog-index"><strong>目录</strong><div class="toc-nav"><ul>
+<span class="token comment">//------ main.js ------  </span>
+<span class="token keyword">import</span> myFunc<span class="token punctuation">,</span><span class="token punctuation">{</span> each <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'lib'</span><span class="token punctuation">;</span>  </code></pre></div></div></div><div class="blog-index"><strong>目录</strong><div class="toc-nav"><ul>
 <li>
 <p><a href="#es6%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95">ES6基本用法</a></p>
 <ul>
