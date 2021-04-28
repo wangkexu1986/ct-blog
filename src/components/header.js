@@ -33,11 +33,11 @@ const CHeader = ({ location }) => {
 
   useEffect(() => {
     try {
-      const [url, path, path2, ...other] = pathname.split('/');
-      if (url === '') {
+      const [pre, url, path, ...other] = pathname.split('/');
+      if (url === 'ct-blog') {
         setSelectedMenu([path]);
       } else {
-        setSelectedMenu([path2]);
+        setSelectedMenu([url]);
       }
     } catch (e) {
       setSelectedMenu(['blog']);

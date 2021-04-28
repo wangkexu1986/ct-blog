@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Layout } from 'antd';
+import { GithubOutlined } from '@ant-design/icons';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import SEO from './seo';
@@ -13,8 +14,21 @@ const CLayout = ({ title, children, location }) => {
     <Layout>
       <SEO title={title} />
       <Header location={location} />
-      <Content className="layout-container">{children}</Content>
-      <Footer className="footer">CT-3G 技术博客 ©2021 DAC</Footer>
+      <Content className="layout-container">
+        {children}
+      </Content>
+      <Footer className="footer">
+        <div className="footer-wrapper">
+          <div className="copyright">
+            CT-3G 技术博客 ©2021 DAC<br/>
+          </div>
+          <div className="links">
+            <a href="https://github.com/DreamArtsChina/ct-blog" className="footer-link" target="_blank">
+              <GithubOutlined />
+            </a>
+          </div>
+        </div>
+      </Footer>
     </Layout>
   )
 };

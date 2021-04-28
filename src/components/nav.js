@@ -23,11 +23,11 @@ const CNav = ({ location }) => {
   const [selectedMenu, setSelectedMenu] = useState(['all']);
 
   useEffect(() => {
-    const [url, path, path2, category, ...other] = pathname.split('/');
-    if (url === '') {
+    const [pre, url, path, path2, ...other] = pathname.split('/');
+    if (url === 'ct-blog') {
       setSelectedMenu([path2]);
     } else {
-      setSelectedMenu([category]);
+      setSelectedMenu([path]);
     }
   }, [pathname]);
 
