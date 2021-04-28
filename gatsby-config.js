@@ -43,6 +43,13 @@ module.exports = {
               wrapperStyle: "margin-bottom: 1.0725rem",
             },
           },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: `carbon`,
+              lineNumbers: true,
+            },
+          },
           "gatsby-remark-autolink-headers",
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
@@ -53,13 +60,6 @@ module.exports = {
               offsetY: `100`,
               maintainCase: false,
               removeAccents: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-highlight-code`,
-            options: {
-              terminal: `carbon`,
-              lineNumbers: true,
             },
           },
           "gatsby-plugin-use-query-params"
