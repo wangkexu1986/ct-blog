@@ -26,13 +26,6 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-highlight-code`,
-            options: {
-              terminal: `carbon`,
-              lineNumbers: true,
-            },
-          },
-          {
             resolve: `gatsby-remark-relative-images`,
             options: {
               staticFolderName: `${process.env.GATSBY_SITE_BASE_URL}static`,
@@ -60,6 +53,13 @@ module.exports = {
               offsetY: `100`,
               maintainCase: false,
               removeAccents: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: `carbon`,
+              lineNumbers: true,
             },
           },
           "gatsby-plugin-use-query-params"
