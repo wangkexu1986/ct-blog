@@ -21,7 +21,7 @@ const Home = ({ data, location, pageContext }) => {
   const posts = data.allFile.edges;
   return (
     <Layout title='主页' location={ location }>
-      <Nav/>
+      <Nav location={location}/>
       <div className="blogs">
         <div className="blog-content">
           <List

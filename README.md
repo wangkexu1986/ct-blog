@@ -37,5 +37,14 @@ tag: ""
 ---
 ```
 
+## 读书笔记
+必须添加文件头
+```shell script
+---
+date: "2021-04-21"
+title: "网站草图"
+---
+```
+
 ## Markdown Syntax
 https://www.gatsbyjs.com/docs/reference/markdown-syntax/

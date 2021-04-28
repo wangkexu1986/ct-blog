@@ -9,11 +9,11 @@ const { Header } = Layout;
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const menu = [
-  { name: '主页', href: "/blog/all/1", key: `${process.env.GATSBY_SITE_BASE_URL}`},
-  { name: '力扣解题', href: "/leetcode/1", key: `${process.env.GATSBY_SITE_BASE_URL}leetcode` },
-  { name: '读书笔记', href: "/notes", key: `${process.env.GATSBY_SITE_BASE_URL}notes` },
-  { name: '编码规范', href: "/styles", key: `${process.env.GATSBY_SITE_BASE_URL}styles` },
-  { name: '好书推荐', href: "/books", key: `${process.env.GATSBY_SITE_BASE_URL}books` },
+  { name: '主页', href: "/blog/all/1", key: 'blog'},
+  { name: '力扣解题', href: "/leetcode/1", key: 'leetcode' },
+  { name: '读书笔记', href: "/notes", key: 'notes' },
+  { name: '编码规范', href: "/styles", key: 'styles' },
+  { name: '好书推荐', href: "/books", key: 'books' },
 ];
 
 const CHeader = ({ location }) => {
@@ -29,11 +29,22 @@ const CHeader = ({ location }) => {
     `
   );
   const { pathname } = location || {};
-  const [selectedMenu, setSelectedMenu] = useState(['/']);
+  const [selectedMenu, setSelectedMenu] = useState(['blog']);
 
   useEffect(() => {
-    setSelectedMenu([pathname]);
+    try {
+      const [url, path, path2, ...other] = pathname.split('/');
+      if (url === '') {
+        setSelectedMenu([path]);
+      } else {
+        setSelectedMenu([path2]);
+      }
+    } catch (e) {
+      setSelectedMenu(['blog']);
+    }
+
   }, [pathname]);
+
   return (
     <Header className="header">
       <Row gutter={24} className="header-container">

@@ -32,6 +32,7 @@ module.exports = async ({ actions, graphql }) => {
         context: {
           dir: `/${node.relativeDirectory}/i`,
           filePath: `/${node.relativePath}/`,
+          name: `${node.relativeDirectory}`
         },
       });
     });

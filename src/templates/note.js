@@ -1,25 +1,37 @@
 import React from 'react';
 import { Link, graphql } from "gatsby";
+import {Space} from "antd";
+import { CarryOutOutlined } from '@ant-design/icons';
 
+const IconText = ({ icon, text }) => (
+  <Space>
+    {React.createElement(icon)}
+    {text}
+  </Space>
+);
 import Layout from '../components/layout';
 
 const Note = ({ data, location, pageContext }) => {
   const contents = data.dir.distinct;
-  const note = data.note.edges[0] || { node: {} };
+  const note = data.note.edges[0] || { node: { frontmatter: {} } };
+  const { name } = pageContext;
   return (
     <Layout title='读书笔记' location={ location }>
-      <div className="blog">
-        <div className="blog-index">
-          <strong>目录</strong>
+      <div className="note">
+        <div className="note-index">
+          <h2>{name}</h2>
           {contents.map((dir, index) => {
             const [content, path] = dir.split('/');
-            return <div className="toc-nav" key={dir}>
+            return <div className="note-nav" key={dir}>
               <Link to={`/notes/${content}/${index+1}`}>{path}</Link>
             </div>
           })}
         </div>
-        <div className="blog-body">
-          <div className="blog-content" dangerouslySetInnerHTML={{ __html: note.node.html }} />
+        <div className="note-body">
+          <div className="blog-icon">
+            <IconText icon={CarryOutOutlined} text={note.node.frontmatter.date} key="list-vertical-date" />
+          </div>
+          <div className="note-content" dangerouslySetInnerHTML={{ __html: note.node.html }} />
         </div>
       </div>
     </Layout>
@@ -43,6 +55,7 @@ export const indexQuery = graphql`
         node {
           frontmatter {
             title
+            date
           }
           html
         }

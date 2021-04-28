@@ -44,7 +44,7 @@ const Notes = ({location}) => {
           return (
             <div key={n.year} className="notes">
               <div className="title">{n.year}年</div>
-              <Timeline mode="left" className="note">
+              <Timeline mode="left" className="note-list">
                 {
                   n.books.map(b => {
                     return (
