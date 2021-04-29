@@ -7,7 +7,7 @@ module.exports = async ({ actions, graphql }) => {
   const result = await graphql(`
     query {
       allFile(
-        filter: {sourceInstanceName: {eq: "leetcode"}}
+        filter: {sourceInstanceName: {eq: "leetcode"}, childrenMarkdownRemark: {elemMatch: {html: {ne: ""}}}}
         sort: {fields: childrenMarkdownRemark___frontmatter___date, order: DESC}
       ) {
         edges {

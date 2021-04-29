@@ -14,10 +14,6 @@ const IconText = ({ icon, text }) => (
 const Blog = ({ data }) => {
   const post = data.markdownRemark;
   const { title, date, tag } = post.frontmatter;
-  const gitalkConfig = {
-    id: post.id,
-    title: title,
-  };
   return (
     <Layout>
       <div className="blog">

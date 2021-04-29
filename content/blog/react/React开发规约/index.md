@@ -39,7 +39,7 @@ https://github.com/JasonBoy/javascript/tree/master/react
 
 类定义模板
 
-```js
+```javascript
 class List extends React.Component {
   // 构造器
   constructor(props) {
