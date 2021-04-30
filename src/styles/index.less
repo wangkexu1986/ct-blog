@@ -119,25 +119,32 @@ a:active {
 	.blog-content {
 		margin: 0 60px;
 		width: 75%;
-		.blog-title {
-			h2 {
-				font-size: 18px;
-				font-weight: 500;
-				line-height: 30px;
+		.blog-card {
+			margin-bottom: 4px;
+			.blog-title {
+				h2 {
+					font-size: 18px;
+					font-weight: 500;
+					line-height: 30px;
+				}
+				p {
+					font-size: 14px;
+					color: #888;
+					line-height: 24px;
+					height: 48px;
+					overflow: hidden;
+					margin-bottom: 14px;
+				}
 			}
-			p {
-				font-size: 14px;
-				color: #888;
-				line-height: 24px;
-				height: 48px;
-				overflow: hidden;
-				margin-bottom: 14px;
+			.ant-space-align-center {
+				color: #3E3A71;
 			}
 		}
-		.ant-list-item:hover {
+		.blog-card:hover {
 			background: #f9fafb;
 			border-radius: 5px;
 		}
+
 	}
 	.blog-graph {
 		width: 25%
@@ -284,6 +291,18 @@ a:active {
 
 .g1, .g2, .g3 {
 	padding: 16px 0;
+	.ant-card-head {
+		padding: 0 12px;
+		font-size: 15px;
+		.ant-card-extra {
+			font-size: 15px;
+			font-weight: 500;
+		}
+	}
+	.ant-card-body {
+		text-align: center;
+		padding: 12px;
+	}
 }
 
 .note {

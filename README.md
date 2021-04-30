@@ -23,6 +23,7 @@ date: "2021-04-21"
 title: "网站草图"
 category: "tool"
 tag: ""
+type: "学习整理 | 问题解决 | BUG复盘"
 ---
 ```
 

@@ -2,6 +2,8 @@
 title: "CSS 盒模型"
 date: "2018-11-27"
 category: "css"
+tag: "盒模型"
+type: "学习整理"
 ---
 
 ## 盒模型

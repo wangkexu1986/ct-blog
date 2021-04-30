@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import {Space} from "antd";
+import { Divider, Space } from "antd";
 import { TagsOutlined, CarryOutOutlined } from '@ant-design/icons';
+import { TypeColor } from "../utils/constants";
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -13,7 +14,7 @@ const IconText = ({ icon, text }) => (
 
 const Blog = ({ data }) => {
   const post = data.markdownRemark;
-  const { title, date, tag } = post.frontmatter;
+  const { title, date, tag, type } = post.frontmatter;
   return (
     <Layout>
       <div className="blog">
@@ -23,6 +24,7 @@ const Blog = ({ data }) => {
             <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />&nbsp;&nbsp;&nbsp;
             <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" />
           </div>
+          <Divider style={{color: TypeColor[type]}} plain>{type}</Divider>
           <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
         <div className="blog-index">
@@ -44,6 +46,7 @@ export const query = graphql`
         title
         date
         tag
+        type
       }
       tableOfContents
       id

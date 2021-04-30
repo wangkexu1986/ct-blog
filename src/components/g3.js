@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import { Card, Select } from 'antd';
+import { Row, Col, Card, Progress, Select} from 'antd';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const { Option } = Select;
 
 const monthMap = [
-  { key: '01', value: '一月' },
-  { key: '02', value: '二月' },
-  { key: '03', value: '三月' },
-  { key: '04', value: '四月' },
-  { key: '05', value: '五月' },
-  { key: '06', value: '六月' },
-  { key: '07', value: '七月' },
-  { key: '08', value: '八月' },
-  { key: '09', value: '九月' },
-  { key: '10', value: '十月' },
-  { key: '11', value: '十一月' },
-  { key: '12', value: '十二月' },
+  { key: '01', value: '1月' },
+  { key: '02', value: '2月' },
+  { key: '03', value: '3月' },
+  { key: '04', value: '4月' },
+  { key: '05', value: '5月' },
+  { key: '06', value: '6月' },
+  { key: '07', value: '7月' },
+  { key: '08', value: '8月' },
+  { key: '09', value: '9月' },
+  { key: '10', value: '10月' },
+  { key: '11', value: '11月' },
+  { key: '12', value: '12月' },
+  { key: '13', value: '合计' },
 ];
 
 function G3() {
@@ -52,12 +53,21 @@ function G3() {
       postCount[year][month] += 1;
     }
   });
+
+  let count = 0;
+  monthMap.forEach((t) => {
+    if (postCount[year]) {
+      count = count + (postCount[year][t.key] || 0)
+    }
+  });
+
   return (
     <div className="g3">
-      <Card title="月投稿统计" extra={
+      <Card title="月次投稿" extra={
         <Select
           size="small"
           value={year}
+          bordered={false}
           onSelect={(v) => setYear(v)}
         >
           {Object.keys(postCount).map((y) =>{
@@ -66,7 +76,34 @@ function G3() {
         </Select>
       }>
         {monthMap.map(({ key, value }) => {
-          return <p key={key}>{value}: {postCount[year] ? postCount[year][key] : 0}</p>
+          let per = 0;
+          if (key === '13') {
+            postCount[year][key] = count;
+          }
+          if (count > 0 && postCount[year]) {
+            per =  (postCount[year][key] / count) * 100;
+          }
+
+          return (
+            <Row span={24}>
+              <Col span={4}>
+                <h4>{value}</h4>
+              </Col>
+              <Col span={20}>
+                <Progress
+                  key={key}
+                  type="line"
+                  percent={per}
+                  strokeColor="#9254de"
+                  style={{opacity: "0.6"}}
+                  format={(p) => {
+                    return `${postCount[year][key]} 篇`
+                  }}
+                />
+              </Col>
+            </Row>
+            )
+
         })}
       </Card>
     </div>

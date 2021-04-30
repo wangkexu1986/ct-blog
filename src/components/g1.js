@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Select } from 'antd';
+import { Card, Select, Progress, Divider } from 'antd';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const { Option } = Select;
@@ -40,12 +40,28 @@ function G1() {
       postCount[frontmatter.date].words += wordCount.words;
     }
   });
+
+  let totalWords = 0;
+  let totalCount = 0;
+  if(postCount[year]) {
+    totalWords = postCount[year].words || 0;
+    totalCount = postCount[year].count || 0;
+  }
+
+  let perWords = 0;
+  let per = 0;
+  if (totalCount > 0) {
+    perWords = (totalWords / totalCount);
+    per = (perWords / totalCount) * 100
+  }
+
   return (
     <div className="g1">
-      <Card title="投稿统计" extra={
+      <Card title="投稿字数" extra={
         <Select
           size="small"
           value={year}
+          bordered={false}
           onSelect={(v) => setYear(v)}
         >
           {Object.keys(postCount).map((y) =>{
@@ -53,8 +69,21 @@ function G1() {
           })}
         </Select>
       }>
-        <p>投稿数：{ postCount[year] ? postCount[year].count : 0 }</p>
-        <p>字数：{ postCount[year] ? postCount[year].words : 0 }</p>
+        <Progress
+          type="circle"
+          percent={per}
+          strokeColor="#9254de"
+          style={{opacity: "0.6"}}
+          format={(percent) => {
+            return (
+              <div>
+                <h5 style={{marginBottom: "2px"}}>{perWords}字</h5>
+                <Divider style={{margin: "6px 0"}}/>
+                <h6 style={{fontSize: "8px"}}>总字数：{ totalWords }字</h6>
+              </div>
+            )
+          }}
+        />
       </Card>
     </div>
   )
