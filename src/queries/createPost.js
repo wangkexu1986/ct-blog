@@ -12,6 +12,7 @@ module.exports = async ({ actions, graphql }) => {
                 slug
               }
             }
+            sourceInstanceName
           }
         }
       }
@@ -26,6 +27,7 @@ module.exports = async ({ actions, graphql }) => {
         component: path.resolve(`./src/templates/blog.js`),
         context: {
           slug: post.fields.slug,
+          sourceInstanceName: node.sourceInstanceName
         },
       })
     }

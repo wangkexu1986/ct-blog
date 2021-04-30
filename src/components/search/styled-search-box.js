@@ -27,7 +27,7 @@ export default styled(SearchBox)`
     outline: none;
     border: ${({ hasFocus }) => (hasFocus ? "2px solid #f0f0f0" : "none")};
     font-size: 14px;
-    transition: 100ms;
+    transition: 300ms;
     height: 40px;
     margin-top: 6px;
     border-radius: 2px;

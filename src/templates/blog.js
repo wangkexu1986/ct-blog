@@ -12,9 +12,11 @@ const IconText = ({ icon, text }) => (
   </Space>
 );
 
-const Blog = ({ data }) => {
+const Blog = ({ data, pageContext }) => {
   const post = data.markdownRemark;
-  const { title, date, tag, type } = post.frontmatter;
+  const { title, date, tag } = post.frontmatter;
+  const type = post.frontmatter.type || '其他';
+  const { sourceInstanceName } = pageContext;
   return (
     <Layout>
       <div className="blog">
@@ -24,7 +26,7 @@ const Blog = ({ data }) => {
             <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />&nbsp;&nbsp;&nbsp;
             <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" />
           </div>
-          <Divider style={{color: TypeColor[type]}} plain>{type}</Divider>
+          {sourceInstanceName === 'blog' && <Divider style={{color: TypeColor[type]}} plain>{type}</Divider>}
           <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
         <div className="blog-index">

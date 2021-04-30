@@ -31,7 +31,8 @@ const Category = ({ data, location, pageContext }) => {
             dataSource={posts}
             renderItem={item => {
               const post = item.node.childrenMarkdownRemark[0];
-              const { title, date, tag, type } = post.frontmatter;
+              const { title, date, tag} = post.frontmatter;
+              const type = post.frontmatter.type || '其他';
               return (
                 <div className="blog-card">
                   <List.Item

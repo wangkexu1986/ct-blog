@@ -31,28 +31,45 @@ export default styled(SearchResult)`
     ul {
       list-style: none;
       margin-left: 0;
+      padding: 12px 12px 0 12px;
+      margin-bottom: 0;
     }
 
     li.ais-Hits-item {
-      margin-bottom: 1em;
 
       a {
-        color: ${({ theme }) => theme.foreground};
-
+        font-size: 15px;
         h4 {
-          margin-bottom: 0.2em;
+          color: indigo;
+          line-height: 20px;
+          height: 20px;
+          margin: 0;
+          border-bottom: 1px solid #e4d1d1;
         }
+      }
+      
+      .ais-Snippet {
+        font-size: 13px;
+        display: block;
+        word-break: break-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     }
   }
 
   .ais-PoweredBy {
-    display: flex;
-    justify-content: flex-end;
     font-size: 80%;
+    height: 40px;
+    line-height: 40px;
+    display: inline;
+    float: right;
 
     svg {
       width: 70px;
+      position: relative;
+    top: 10px;
     }
   }
 `
