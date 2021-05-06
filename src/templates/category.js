@@ -35,23 +35,23 @@ const Category = ({ data, location, pageContext }) => {
               const type = post.frontmatter.type || '其他';
               return (
                 <div className="blog-card">
-                  <List.Item
-                    key={title}
-                    actions={[
-                      <IconText icon={UserOutlined} text={author || "无名"} key="list-vertical-author" />,
-                      <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />,
-                      <IconText icon={FontSizeOutlined} text={`${post.wordCount.words || 0} 字`} key="list-vertical-word-o" />,
-                      <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
-                      <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" style={{fontSize: "14px"}}/>,
-                    ]}
-                  >
-                    <div className="blog-title">
-                      <h2 >
-                        <Link to={post.fields.slug}>{title}</Link>
-                      </h2>
-                      <p>{post.excerpt}</p>
-                    </div>
-                  </List.Item>
+                  <Link to={post.fields.slug}>
+                    <List.Item
+                      key={title}
+                      actions={[
+                        <IconText icon={UserOutlined} text={author || "无名"} key="list-vertical-author" />,
+                        <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />,
+                        <IconText icon={FontSizeOutlined} text={`${post.wordCount.words || 0} 字`} key="list-vertical-word-o" />,
+                        <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+                        <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" style={{fontSize: "14px"}}/>,
+                      ]}
+                    >
+                      <div className="blog-title">
+                        <h2> {title} </h2>
+                        <p>{post.excerpt}</p>
+                      </div>
+                    </List.Item>
+                  </Link>
                   <Divider style={{color: TypeColor[type]}} plain>{type}</Divider>
                 </div>
               )}}
