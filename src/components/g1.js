@@ -57,7 +57,7 @@ function G1() {
 
   return (
     <div className="g1">
-      <Card title="投稿字数" extra={
+      <Card title="文章字数" extra={
         <Select
           size="small"
           value={year}

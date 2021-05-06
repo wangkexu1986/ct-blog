@@ -4,6 +4,7 @@ title: "[CentOS 6.5] AWS EC2 EBS硬盘扩容"
 category: "aws"
 tag: "AWS EC2, 硬盘扩容"
 type: "问题解决"
+author: "slsay"
 ---
 
 AWS ec2实例的硬盘扩容需要两步。

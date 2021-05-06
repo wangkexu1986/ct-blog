@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Space, Divider } from 'antd';
-import { CarryOutOutlined, MessageOutlined, LikeOutlined, FontSizeOutlined, TagsOutlined } from '@ant-design/icons';
+import { CarryOutOutlined, MessageOutlined, UserOutlined, FontSizeOutlined, TagsOutlined } from '@ant-design/icons';
 import { Link, graphql } from "gatsby"
 
 import { TypeColor } from "../utils/constants";
@@ -32,7 +32,7 @@ const Home = ({ data, location, pageContext }) => {
             dataSource={posts}
             renderItem={item => {
               const post = item.node.childrenMarkdownRemark[0];
-              const { title, date, tag} = post.frontmatter;
+              const { title, date, tag, author } = post.frontmatter;
               const type = post.frontmatter.type || '其他';
               return (
                 <div className="blog-card">
@@ -40,6 +40,7 @@ const Home = ({ data, location, pageContext }) => {
                     <List.Item
                       key={title}
                       actions={[
+                        <IconText icon={UserOutlined} text={author || "无名"} key="list-vertical-author" />,
                         <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />,
                         <IconText icon={FontSizeOutlined} text={`${post.wordCount.words || 0} 字`} key="list-vertical-word-o" />,
                         <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
@@ -92,6 +93,7 @@ export const indexQuery = graphql`
               title
               tag
               type
+              author
             }
             excerpt
             timeToRead

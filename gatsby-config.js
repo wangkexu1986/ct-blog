@@ -82,6 +82,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-195569818-1",
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics-reporter`,
+      options: {
+        email: process.env.CLIENT_EMAIL,
+        privateKey: process.env.PRIVATE_KEY,
+        viewId: process.env.VIEW_ID,
+      }
+    },
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,

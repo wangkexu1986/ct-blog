@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Divider, Space } from "antd";
-import { TagsOutlined, CarryOutOutlined } from '@ant-design/icons';
+import { TagsOutlined, CarryOutOutlined, UserOutlined } from '@ant-design/icons';
 import { TypeColor } from "../utils/constants";
 
 const IconText = ({ icon, text }) => (
@@ -14,7 +14,7 @@ const IconText = ({ icon, text }) => (
 
 const Blog = ({ data, pageContext }) => {
   const post = data.markdownRemark;
-  const { title, date, tag } = post.frontmatter;
+  const { title, date, tag, author } = post.frontmatter;
   const type = post.frontmatter.type || '其他';
   const { sourceInstanceName } = pageContext;
   return (
@@ -23,6 +23,7 @@ const Blog = ({ data, pageContext }) => {
         <div className="blog-body">
           <div className="blog-title">{title}</div>
           <div className="blog-icon">
+            <IconText icon={UserOutlined} text={author || "无名"} key="list-vertical-author" />&nbsp;&nbsp;&nbsp;
             <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />&nbsp;&nbsp;&nbsp;
             <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" />
           </div>
@@ -49,6 +50,7 @@ export const query = graphql`
         date
         tag
         type
+        author
       }
       tableOfContents
       id

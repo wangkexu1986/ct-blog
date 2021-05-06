@@ -57,7 +57,7 @@ function G2() {
   });
   return (
     <div className="g2">
-      <Card title="投稿类型" extra={
+      <Card title="文章类型" extra={
         <Select
           size="small"
           value={year}
