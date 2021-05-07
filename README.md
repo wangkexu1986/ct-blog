@@ -53,6 +53,7 @@ author: "github账号名"
 必须添加文件头
 ```shell script
 ---
+title: '书名 章节名'
 date: "2021-04-21"
 author: "github账号名"
 ---

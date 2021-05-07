@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from "gatsby";
 import {Space} from "antd";
-import { CarryOutOutlined } from '@ant-design/icons';
+import { CarryOutOutlined, UserOutlined } from '@ant-design/icons';
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -15,8 +15,9 @@ const Note = ({ data, location, pageContext }) => {
   const contents = data.dir.distinct;
   const note = data.note.edges[0] || { node: { frontmatter: {} } };
   const { name } = pageContext;
+  const { title, author, date } = note.node.frontmatter;
   return (
-    <Layout title='读书笔记' location={ location }>
+    <Layout title={title} location={ location }>
       <div className="note">
         <div className="note-index">
           <h2>{name}</h2>
@@ -29,7 +30,8 @@ const Note = ({ data, location, pageContext }) => {
         </div>
         <div className="note-body">
           <div className="blog-icon">
-            <IconText icon={CarryOutOutlined} text={note.node.frontmatter.date} key="list-vertical-date" />
+            <IconText icon={UserOutlined} text={author || "无名"} key="list-vertical-author" />,
+            <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />
           </div>
           <div className="note-content" dangerouslySetInnerHTML={{ __html: note.node.html }} />
         </div>
@@ -56,6 +58,7 @@ export const indexQuery = graphql`
           frontmatter {
             title
             date
+            author
           }
           html
         }

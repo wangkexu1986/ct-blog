@@ -21,7 +21,7 @@ const Blog = ({ data, pageContext }) => {
   const type = post.frontmatter.type || '其他';
   const { sourceInstanceName } = pageContext;
   return (
-    <Layout>
+    <Layout title={`${title} ${tag}`}>
       <div className="blog">
         <div className="blog-body">
           <div className="blog-title">{title}</div>
