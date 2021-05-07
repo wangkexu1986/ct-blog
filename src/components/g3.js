@@ -63,7 +63,7 @@ function G3() {
 
   return (
     <div className="g3">
-      <Card title="月次文章" extra={
+      <Card title="文章数" extra={
         <Select
           size="small"
           value={year}
