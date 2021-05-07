@@ -9,6 +9,7 @@ const Comments = () => {
     script.setAttribute('repo', 'DreamArtsChina/ct-blog');
     script.setAttribute('issue-term', 'pathname');
     script.setAttribute('theme', 'github-light');
+    script.setAttribute('label', 'blog');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
 
