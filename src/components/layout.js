@@ -12,7 +12,7 @@ deckDeckGoHighlightElement();
 const CLayout = ({ title, children, location }) => {
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={title}/>
       <Header location={location} />
       <Content className="layout-container">
         {children}
