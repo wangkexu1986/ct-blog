@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Space, Divider } from 'antd';
-import { CarryOutOutlined, MessageOutlined, UserOutlined, FontSizeOutlined, TagsOutlined } from '@ant-design/icons';
+import { CarryOutOutlined, EyeOutlined, UserOutlined, FontSizeOutlined, TagsOutlined } from '@ant-design/icons';
 import { Link, graphql } from "gatsby"
 
 import { TypeColor } from "../utils/constants";
@@ -21,6 +21,8 @@ const IconText = ({ icon, text, style }) => (
 
 const Home = ({ data, location, pageContext }) => {
   const posts = data.allFile.edges;
+  const countList = data.allPageViews.nodes || [];
+
   return (
     <Layout title='主页' location={ location }>
       <Nav location={location}/>
@@ -33,9 +35,11 @@ const Home = ({ data, location, pageContext }) => {
             renderItem={item => {
               const post = item.node.childrenMarkdownRemark[0];
               const { title, date, tag, author } = post.frontmatter;
+              const slug = post.fields.slug;
+              const view = countList.find(c => c.id === `/ct-blog${slug}`) || {};
               const type = post.frontmatter.type || '其他';
               return (
-                <div className="blog-card">
+                <div className="blog-card" key={slug}>
                   <Link to={post.fields.slug}>
                     <List.Item
                       key={title}
@@ -43,7 +47,7 @@ const Home = ({ data, location, pageContext }) => {
                         <IconText icon={UserOutlined} text={author || "无名"} key="list-vertical-author" />,
                         <IconText icon={CarryOutOutlined} text={date} key="list-vertical-date" />,
                         <IconText icon={FontSizeOutlined} text={`${post.wordCount.words || 0} 字`} key="list-vertical-word-o" />,
-                        <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+                        <IconText icon={EyeOutlined} text={ view.totalCount || 0 } key="list-vertical-message" />,
                         <IconText icon={TagsOutlined} text={tag} key="list-vertical-tag" style={{fontSize: "14px"}}/>,
                       ]}
                     >
@@ -102,6 +106,12 @@ export const indexQuery = graphql`
             }
           }
         }
+      }
+    }
+    allPageViews(sort: {order: DESC, fields: totalCount}) {
+      nodes {
+        id
+        totalCount
       }
     }
   }

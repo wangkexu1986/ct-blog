@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
   }
 };
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode, basePath: 'content' });
@@ -22,7 +22,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: 'slug',
       value: slug,
-    })
+    });
   }
 };
 

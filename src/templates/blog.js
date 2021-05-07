@@ -1,9 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+
 import { Divider, Space } from "antd";
 import { TagsOutlined, CarryOutOutlined, UserOutlined } from '@ant-design/icons';
 import { TypeColor } from "../utils/constants";
+
+import Layout from "../components/layout"
+import Comments from "../components/comments";
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -35,6 +38,7 @@ const Blog = ({ data, pageContext }) => {
           <div className="toc-nav" dangerouslySetInnerHTML={{ __html: post.tableOfContents }}/>
         </div>
       </div>
+      <Comments />
     </Layout>
   )
 };

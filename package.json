@@ -21,7 +21,6 @@
     "gatsby": "3.2.1",
     "gatsby-plugin-algolia": "0.19.0",
     "gatsby-plugin-baidu-analytics": "2.2.0",
-    "gatsby-plugin-gitalk": "1.2.2",
     "gatsby-plugin-google-analytics": "^3.4.0",
     "gatsby-plugin-google-analytics-reporter": "^1.1.1",
     "gatsby-plugin-google-gtag": "3.3.0",
