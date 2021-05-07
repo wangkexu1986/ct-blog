@@ -5,17 +5,26 @@ CT-BLOG
 
 安装Nodejs 12
 
-## 启动
+## 使用
+
+### 本地环境启动
 ```shell script
+npm install
 npm run start
 ```
+### 提交变更
+```shell script
+git push
+```
 
-## 发布到github page
+### 更新网站
 ```shell script
 npm run deploy
 ```
 
-## 博客书写规范
+## 书写规范
+
+### 博客
 必须添加文件头
 ```shell script
 ---
@@ -28,7 +37,7 @@ author: "github账号名"
 ---
 ```
 
-## 力扣题书写规范
+### 力扣题
 必须添加文件头
 ```shell script
 ---
@@ -40,7 +49,7 @@ author: "github账号名"
 ---
 ```
 
-## 读书笔记
+### 读书笔记
 必须添加文件头
 ```shell script
 ---
