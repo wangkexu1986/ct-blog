@@ -20,7 +20,7 @@ const IconText = ({ icon, text, style }) => (
 
 const Category = ({ data, location, pageContext }) => {
   const posts = data.allFile.edges;
-  const countList = data.allPageViews.nodes || [];
+  const countList = data.allPageViews ? data.allPageViews.nodes : [];
   return (
     <Layout title='主页' location={ location }>
       <Nav location={location}/>
@@ -102,12 +102,6 @@ export const categoryQuery = graphql`
             }
           }
         }
-      }
-    }
-    allPageViews(sort: {order: DESC, fields: totalCount}) {
-      nodes {
-        id
-        totalCount
       }
     }
   }

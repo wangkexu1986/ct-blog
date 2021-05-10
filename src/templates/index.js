@@ -21,7 +21,7 @@ const IconText = ({ icon, text, style }) => (
 
 const Home = ({ data, location, pageContext }) => {
   const posts = data.allFile.edges;
-  const countList = data.allPageViews.nodes || [];
+  const countList = data.allPageViews ? data.allPageViews.nodes : [];
 
   return (
     <Layout title='主页' location={ location }>
@@ -106,12 +106,6 @@ export const indexQuery = graphql`
             }
           }
         }
-      }
-    }
-    allPageViews(sort: {order: DESC, fields: totalCount}) {
-      nodes {
-        id
-        totalCount
       }
     }
   }
