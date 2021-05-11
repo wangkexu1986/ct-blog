@@ -47,9 +47,9 @@ module.exports = {
             resolve: `gatsby-remark-highlight-code`,
             options: {
               terminal: `carbon`,
-              theme: 'vscode',
+              theme: 'dracula',
               lineNumbers: true,
-              editable: true,
+              editable: false,
             },
           },
           "gatsby-remark-autolink-headers",
