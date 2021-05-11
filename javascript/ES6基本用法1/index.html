@@ -150,7 +150,7 @@ data-styled.g4[id="styled-search-root-dylu5e-0"]{content:"daQuOo,"}/*!sc*/
 <li>const用来定义常量,相当于java中的final关键字.</li>
 <li>const声明常量之后必须立即初始化.</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const PI = 3.1415;
 console.log(PI);  // 3.1415
 
@@ -161,7 +161,7 @@ PI = 3;           // TypeError: Assignment to constant variable.</code>
 <li>ES6 新增了let命令，用来声明变量。</li>
 <li>块级作用域,只在let命令所在的代码块内有效。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//ES6
 {
   var a = 5;
@@ -173,7 +173,7 @@ console.log(a);       //5
 <ul>
 <li>for循环的计数器，就很合适使用let命令。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">for (let i = 0; i &lt; 3; i++) {
   let i = &#39;abc&#39;;
   console.log(i);      
@@ -184,7 +184,7 @@ console.log(i);      // ReferenceError: i is not defined</code>
 <ul>
 <li>不存在变量提升</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">console.log(c);            //undefined
 var c=8;
 console.log(&quot;----------&quot;);
@@ -194,7 +194,7 @@ let d=9;</code>
 <ul>
 <li>暂时性死区（temporal dead zone，简称 TDZ）</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">var tmp = 123;
 
 if (true) {
@@ -206,7 +206,7 @@ if (true) {
 <ul>
 <li>模式匹配,ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//变量赋值
 let a = 1;
 let b = 2;
@@ -218,7 +218,7 @@ let [a, b, c] = [1, 2, 3];</code>
 <ul>
 <li>可以从数组中提取值，按照对应位置，对变量赋值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let [foo, [[bar], baz]] = [1, [[2], 3]];
 foo // 1
 bar // 2
@@ -243,7 +243,7 @@ z // []</code>
 <ul>
 <li>默认值,解构赋值允许指定默认值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let [foo = true] = [];
 foo // true
 
@@ -262,7 +262,7 @@ let [x = f()] = [1];   // 会输出aaa吗?</code>
 <li>数组的元素是按次序排列的，变量的取值由它的位置决定；</li>
 <li>而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let { bar, foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
 foo // &quot;aaa&quot;
 bar // &quot;bbb&quot;
@@ -273,7 +273,7 @@ baz // undefined</code>
 <ul>
 <li>如果变量名与属性名不一致，必须写成下面这样。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let { foo: baz } = { foo: &#39;aaa&#39;, bar: &#39;bbb&#39; };
 baz // &quot;aaa&quot;
 
@@ -286,7 +286,7 @@ l // &#39;world&#39;</code>
 <ul>
 <li>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const [a, b, c, d, e] = &#39;hello&#39;;
 a // &quot;h&quot;
 b // &quot;e&quot;
@@ -297,12 +297,12 @@ e // &quot;o&quot;</code>
 <ul>
 <li>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let {length : len} = &#39;hello&#39;;
 len // 5</code>
         </deckgo-highlight-code>
 <h3 id="函数参数的解构赋值" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="函数参数的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC" aria-label="函数参数的解构赋值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数参数的解构赋值</h3>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">function add([x, y]){
   return x + y;
 }
@@ -312,7 +312,7 @@ add([1, 2]); // 3</code>
 <ul>
 <li>也可以使用默认值</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">function move({x = 0, y = 0} = {}) {
   return [x, y];
 }
@@ -324,7 +324,7 @@ move(); // [0, 0]
 </code>
         </deckgo-highlight-code>
 <h2 id="模板字符串" style="position:relative;"><a href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" aria-label="模板字符串 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2" aria-label="模板字符串 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>模板字符串</h2>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">// ES5 输出模板
 $(&#39;#result&#39;).append(
   &#39;There are &lt;b&gt;&#39; + basket.count + &#39;&lt;/b&gt; &#39; +
@@ -343,7 +343,7 @@ $(&#39;#result&#39;).append(`
 <ul>
 <li>模板字符串采用反引号（`）标识，并且模板字符串中的空格、换行将在输出时有所保留。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">// 普通字符串
 `In JavaScript &#39;\n&#39; is a line-feed.`
 
@@ -361,7 +361,7 @@ let name = &quot;Bob&quot;, time = &quot;today&quot;;
 <ul>
 <li>${主体}，其中主体可以是表达式、运算、对象属性还可以是函数，若是字符串将直接输出该字符串。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let x = 1;
 let y = 2;
 
@@ -384,7 +384,7 @@ function fn() {
         </deckgo-highlight-code>
 <h2 id="函数" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0" aria-label="函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0" aria-label="函数 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数</h2>
 <h3 id="函数参数的默认值" style="position:relative;"><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC" aria-label="函数参数的默认值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC" aria-label="函数参数的默认值 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>函数参数的默认值</h3>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">// ES5
 function log(x, y) {
   y = y || &#39;World&#39;;
@@ -403,7 +403,7 @@ log(&#39;Hello&#39;, &#39;&#39;) // Hello</code>
 <ul>
 <li>参数变量是默认声明的，所以不能用let或const再次声明。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">function foo(x = 5) {
   let x = 1; // error
   const x = 2; // error
@@ -412,7 +412,7 @@ log(&#39;Hello&#39;, &#39;&#39;) // Hello</code>
 <ul>
 <li>使用参数默认值时，函数不能有同名参数。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">// 不报错
 function foo(x, x, y) {
   // ...
@@ -424,7 +424,7 @@ function foo(x, x, y = 1) {
 }
 // SyntaxError: Duplicate parameter name not allowed in this context</code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let x = 99;
 function foo(p = x + 1) {
   console.log(p);
@@ -441,7 +441,7 @@ foo() // ?</code>
 <li>省略return关键字</li>
 <li>继承当前上下文的 this 关键字</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//例如： 
 [1,2,3].map( x =&gt; x + 1 )
 //等同于： 
@@ -452,7 +452,7 @@ foo() // ?</code>
 <ul>
 <li>ES6 允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const foo = &#39;bar&#39;;
 const baz = {foo};
 baz // {foo: &quot;bar&quot;}
@@ -460,7 +460,7 @@ baz // {foo: &quot;bar&quot;}
 // 等同于
 const baz = {foo: foo};</code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">// 另一个例子
 function f(x, y) {
   return {x, y};
@@ -477,7 +477,7 @@ f(1, 2) // Object {x: 1, y: 2}</code>
 <ul>
 <li>除了属性简写,方法也可以简写</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let birth = &#39;2000/01/01&#39;;
 
 const Person = {
@@ -496,13 +496,13 @@ const Person = {
 <ul>
 <li>ES2018 将这个扩展运算符（…）引入了对象</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const [a, ...b] = [1, 2, 3];
 a // 1
 b // [2, 3]</code>
         </deckgo-highlight-code>
 <h3 id="组装对象或者数组" style="position:relative;"><a href="#%E7%BB%84%E8%A3%85%E5%AF%B9%E8%B1%A1%E6%88%96%E8%80%85%E6%95%B0%E7%BB%84" aria-label="组装对象或者数组 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E7%BB%84%E8%A3%85%E5%AF%B9%E8%B1%A1%E6%88%96%E8%80%85%E6%95%B0%E7%BB%84" aria-label="组装对象或者数组 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>组装对象或者数组</h3>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//数组
 const color = [&#39;red&#39;, &#39;yellow&#39;]
 const colorful = [...color, &#39;green&#39;, &#39;pink&#39;]
@@ -514,7 +514,7 @@ const alphabets = { ...alp, third: &#39;c&#39; }
 console.log(alphabets) //{ &quot;fist&quot;: &quot;a&quot;, &quot;second&quot;: &quot;b&quot;, &quot;third&quot;: &quot;c&quot;</code>
         </deckgo-highlight-code>
 <h3 id="获取数组或者对象除了前几项或者除了某几项的其他项" style="position:relative;"><a href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%88%96%E8%80%85%E5%AF%B9%E8%B1%A1%E9%99%A4%E4%BA%86%E5%89%8D%E5%87%A0%E9%A1%B9%E6%88%96%E8%80%85%E9%99%A4%E4%BA%86%E6%9F%90%E5%87%A0%E9%A1%B9%E7%9A%84%E5%85%B6%E4%BB%96%E9%A1%B9" aria-label="获取数组或者对象除了前几项或者除了某几项的其他项 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E6%88%96%E8%80%85%E5%AF%B9%E8%B1%A1%E9%99%A4%E4%BA%86%E5%89%8D%E5%87%A0%E9%A1%B9%E6%88%96%E8%80%85%E9%99%A4%E4%BA%86%E6%9F%90%E5%87%A0%E9%A1%B9%E7%9A%84%E5%85%B6%E4%BB%96%E9%A1%B9" aria-label="获取数组或者对象除了前几项或者除了某几项的其他项 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>获取数组或者对象除了前几项或者除了某几项的其他项</h3>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//数组
 const number = [1,2,3,4,5]
 const [first, ...rest] = number
@@ -530,7 +530,7 @@ const { username, ...rest } = user
 console.log(rest) //{&quot;address&quot;: &quot;peking&quot;, &quot;age&quot;: 19, &quot;gender&quot;: &quot;female&quot;</code>
         </deckgo-highlight-code>
 <h3 id="组合成新的对象" style="position:relative;"><a href="#%E7%BB%84%E5%90%88%E6%88%90%E6%96%B0%E7%9A%84%E5%AF%B9%E8%B1%A1" aria-label="组合成新的对象 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#%E7%BB%84%E5%90%88%E6%88%90%E6%96%B0%E7%9A%84%E5%AF%B9%E8%B1%A1" aria-label="组合成新的对象 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>组合成新的对象</h3>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const first = {
     a: 1,
     b: 2,
@@ -549,7 +549,7 @@ console.log(total) // { a: 1, b: 2, c: 3, d: 4 } //重复属性名,右边覆盖�
 <li>import用于在一个模块中加载另一个含有export接口的模块。</li>
 <li>也就是说使用export命令定义了模块的对外接口以后，其他JS文件就可以通过import命令加载这个模块（文件）。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//全部导入
 import people from &#39;./example&#39;
 
@@ -583,14 +583,14 @@ export class App extend Component {};</code>
 <ul>
 <li>为了解决导出命名冲突的问题，ES6为你提供了重命名的方法解决这个问题</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">import {flip as flipOmelet} from &quot;eggs.js&quot;;  
 import {flip as flipHouse} from &quot;real-estate.js&quot;;  </code>
         </deckgo-highlight-code>
 <ul>
 <li>同样，当你在导出的时候也可以重命名。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">v1() { ... }  
 v2() { ... }  
   
@@ -604,7 +604,7 @@ export {
 <ul>
 <li>有时候为了避免上层模块导入太多的模块，我们可能使用底层模块作为中转，直接导出另一个模块的内容如下：</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//------ myFunc.js ------  
 export default function() {...};  
       

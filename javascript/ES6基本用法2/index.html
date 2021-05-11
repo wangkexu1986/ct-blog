@@ -163,12 +163,12 @@ data-styled.g4[id="styled-search-root-dylu5e-0"]{content:"daQuOo,"}/*!sc*/
 <li>第三，当处于pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</li>
 </ul>
 <p>如果某些事件不断地反复发生，一般来说，使用 Stream 模式是比部署Promise更好的选择。</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">setTimeout(function(){
   console.log(&#39;Yay!&#39;);
 }, 1000);</code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//ES6 Promises重写
 var wait1000 =  new Promise(function(resolve, reject) {
   setTimeout(resolve, 1000);
@@ -185,7 +185,7 @@ var wait1000 =  new Promise((resolve, reject)=&gt; {
 <ul>
 <li>如果我们有更多的嵌套逻辑在setTimeout()回调函数中，我们将发现更多好处：</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">setTimeout(function(){
   console.log(&#39;Yay!&#39;);
   setTimeout(function(){
@@ -193,7 +193,7 @@ var wait1000 =  new Promise((resolve, reject)=&gt; {
   }, 1000)
 }, 1000);</code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//ES6 Promises重写
 var wait1000 =  ()=&gt; new Promise((resolve, reject)=&gt; {
     setTimeout(resolve, 1000)
@@ -220,7 +220,7 @@ wait1000()
 <li>类的创建和使用真是一件令人头疼的事情在过去的ES5中，因为没有一个关键字class.</li>
 <li>ES6没有用函数, 而是使用原型实现类。我们创建一个类baseModel ，并且在这个类里定义了一个constructor 和一个 getName()方法：</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">class baseModel {
   constructor(options = {}, data = []) { // class constructor
     this.name = &#39;Base&#39;;
@@ -244,7 +244,7 @@ wait1000()
 <ul>
 <li>AccountModel 从类baseModel 中而来</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">class AccountModel extends baseModel {
     constructor(options, data) {
 //为了调用父级构造函数，可以毫不费力的唤起super()用参数传递：
@@ -269,7 +269,7 @@ console.log(&#39;Data is %s&#39;, accounts.accountsData); </code>
 <li>在ES6以前JavaScript并不支持本地的模块。人们想出了AMD，RequireJS，CommonJS以及其它解决方法。</li>
 <li>现在ES6中可以用模块import 和export 操作了。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//在ES5中,module.js有port变量和getAccounts 方法:
 module.exports = {
   port: 3000,
@@ -286,7 +286,7 @@ console.log(service.port); // 3000
 <ul>
 <li>在ES6中，我们将用export and import模块。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//用ES6 写的module.js文件库：
 export var port = 3000;
 export function getAccounts(url) {
@@ -304,7 +304,7 @@ console.log(service.port); // 3000</code>
 <h2 id="es7" style="position:relative;"><a href="#es7" aria-label="es7 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#es7" aria-label="es7 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ES7</h2>
 <h3 id="arrayprototypeincludes" style="position:relative;"><a href="#arrayprototypeincludes" aria-label="arrayprototypeincludes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="#arrayprototypeincludes" aria-label="arrayprototypeincludes permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Array.prototype.includes</h3>
 <p>替代indexOf，用来检查数组中是否存在值</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let arr = [&#39;react&#39;, &#39;angular&#39;, &#39;vue&#39;];
 // WRONG 
 if (arr.indexOf(&#39;react&#39;)) {       // 0 -&gt; evaluates to false, definitely as we expected 
@@ -318,7 +318,7 @@ console.log(&#39;Can use React&#39;);
 </code>
         </deckgo-highlight-code>
 <p>在ES7中使用includes代码如下:</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let arr = [&#39;react&#39;, &#39;angular&#39;, &#39;vue&#39;]
 
 // Correct
@@ -328,7 +328,7 @@ if (arr.includes(&#39;react&#39;)) {
 </code>
         </deckgo-highlight-code>
 <p>还能在字符串中使用includes:</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let str = &#39;React Quickly&#39;
 
 // Correct
@@ -348,7 +348,7 @@ if (str.toLowerCase().includes(&#39;react&#39;)) {  // true
 <li>includes也可以在NaN(非数字)使用。</li>
 <li>includes第二可选参数fromIndex，这对于优化是有好处的，因为它允许从特定位置开始寻找匹配。</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">console.log([1, 2, 3].includes(2)) // === true) 
 console.log([1, 2, 3].includes(4)) // === false) 
 console.log([1, 2, NaN].includes(NaN)) // === true) 
@@ -363,21 +363,21 @@ console.log([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].includes(&#39;a&#39;, 1)) //
 <li>在ES6或者早些版本，你不得不创建一个循环，创建一个递归函数或者使用Math.pow,</li>
 <li>如果你忘记了什么是指数,当你有相同数字（基数）自相相乘多次（指数）。例如，7的3次方是7<em>7</em>7</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//在ES6，你能使用Math.pow创建一个短的递归箭头函数
 calculateExponent = (base, exponent) =&gt; base*((--exponent&gt;1)?calculateExponent(base, exponent):base) console.log(calculateExponent(7,12) === Math.pow(7,12)) // true 
 console.log(calculateExponent(2,7) === Math.pow(2,7)) // true
 </code>
         </deckgo-highlight-code>
 <p>在ES7，以数学向导的开发者可以使用更短的语法:</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let a = 7 ** 12
 let b = 2 ** 7
 console.log(a === Math.pow(7,12)) // true
 console.log(b === Math.pow(2,7)) // true</code>
         </deckgo-highlight-code>
 <p>开发者还可以操作结果:</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let a = 7
 a **= 12
 let b = 2
@@ -399,30 +399,30 @@ console.log(b === Math.pow(2,7)) // true</code>
 <li>开发者可以指定填充的字符串或者使用默认的空格;</li>
 </ul>
 <p>函数的声明如下：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">//函数的首个参数为目标长度，即最终生成的字符串长度；
 //第二个参数即是指定的填充字符串
 str.padStart(targetLength [, padString])    // 在开始部位填充
 str.padEnd(targetLength [, padString])      // 从字符串的尾端右边开始填充</code>
         </deckgo-highlight-code>
 <p>使用空格创建列：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">console.log(&#39;react&#39;.padStart(10).length)         // &quot;       react&quot; is 10
 console.log(&#39;backbone&#39;.padStart(10).length)         // &quot;  backbone&quot; is 10</code>
         </deckgo-highlight-code>
 <p>它对于财务方面非常有用：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">console.log(&#39;0.00&#39;.padStart(20))            
 console.log(&#39;10,000.00&#39;.padStart(20))    
 console.log(&#39;250,000.00&#39;.padStart(20))    </code>
         </deckgo-highlight-code>
 <p>这结果作为一个会计总账格式非常漂亮：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">                0.00
            10,000.00
           250,000.00</code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">// 其他字符填充
 console.log(&#39;react&#39;.padStart(10, &#39;_&#39;))         // &quot;_____react&quot;
 console.log(&#39;backbone&#39;.padStart(10, &#39;*&#39;))         // &quot;**backbone&quot;
@@ -437,10 +437,10 @@ console.log(&#39;backbone&#39;.padEnd(10, &#39;*&#39;))         // &quot;backbon
 <li>Object.values 和Object.keys类似，返回数组类型，其序号和Object.keys序号对应</li>
 </ul>
 <p>函数的声明为：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">Object.values(obj)  //参数obj可以为某个对象或者数组（数组可以看做键为下标的对象）</code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const obj = { x: &#39;xxx&#39;, y: 1 };
 Object.values(obj);             // [&#39;xxx&#39;, 1]
 
@@ -458,7 +458,7 @@ Object.values(&#39;es8&#39;);          // [&#39;e&#39;, &#39;s&#39;, &#39;8&#39;
 <li>key-value对数组（作为一个数组），他们（key-value）分别以数组存放数组中。</li>
 <li>Object.entries 数组中顺序与 Object.values 保持一致</li>
 </ul>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">const obj = { x: &#39;xxx&#39;, y: 1 };
 Object.entries(obj); // [[&#39;x&#39;, &#39;xxx&#39;], [&#39;y&#39;, 1]]
 
@@ -470,7 +470,7 @@ Object.entries(obj); // [[&#39;1&#39;, &#39;yyy&#39;], [&#39;3&#39;, &#39;zzz&#3
 Object.entries(&#39;es8&#39;); // [[&#39;0&#39;, &#39;e&#39;], [&#39;1&#39;, &#39;s&#39;], [&#39;2&#39;, &#39;8&#39;]]</code>
         </deckgo-highlight-code>
 <p>猜一猜，我们同样使用ES6for/of（毕竟全部都是数组）遍历Object.entries返回来的结果值。</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let obj = {a: 1, b: 2, c: 3}
 for (let [key, value] of Object.entries(obj)) {
   console.log(`${key} is ${value}`)
@@ -484,11 +484,11 @@ for (let [key, value] of Object.entries(obj)) {
 <li>该属性必须是对象自己定义而不是继承自原型链</li>
 </ul>
 <p>函数的声明为：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">Object.getOwnPropertyDescriptor(obj, prop)</code>
         </deckgo-highlight-code>
 <p>obj 即为源对象，而 prop 即为需要查看的属性名；结果中包含的键可能有 configurable、enumerable、writable、get、set 以及 value。</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let azatsBooks = { 
   books: [&#39;React Quickly&#39;], 
   get latest () { 
@@ -499,7 +499,7 @@ for (let [key, value] of Object.entries(obj)) {
 }</code>
         </deckgo-highlight-code>
 <p>数据描述符books由Object.getOwnPropertyDescriptor(azatsBooks, ‘books’)产生结果如下：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">Object
     configurable: true
     enumerable: true
@@ -508,7 +508,7 @@ for (let [key, value] of Object.entries(obj)) {
     __proto__: Object</code>
         </deckgo-highlight-code>
 <p>Object.getOwnPropertyDescriptor(azatsBooks, ‘latest’)将会展现latest的描述符，这个latest（get）存取器描述符展现如下：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">Object
     configurable: true
     numerable: true
@@ -517,11 +517,11 @@ for (let [key, value] of Object.entries(obj)) {
     __proto__: Object</code>
         </deckgo-highlight-code>
 <p>现在我们调用新方法获取所有的描述符：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">console.log(Object.getOwnPropertyDescriptors(azatsBooks))</code>
         </deckgo-highlight-code>
 <p>它会给出这个对象两个描述符books和latest：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">Object 
   books: Object 
     configurable: true 
@@ -544,7 +544,7 @@ for (let [key, value] of Object.entries(obj)) {
 <li>该特性允许我们在定义或者调用函数时添加尾部逗号而不报错：</li>
 </ul>
 <p>在ES5中，将会非法语法，在函数参数后面应该是没有逗号的：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">var f = function(a,
   b,
   c,
@@ -555,7 +555,7 @@ for (let [key, value] of Object.entries(obj)) {
 f(1,2,3,&#39;this&#39;)</code>
         </deckgo-highlight-code>
 <p>在ES8中，这种尾逗号是没有问题的：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">var f = function(a,
   b,
   c,
@@ -567,7 +567,7 @@ f(1,2,3,&#39;this&#39;)</code>
 f(1,2,3,&#39;this&#39;)</code>
         </deckgo-highlight-code>
 <p>现在，函数中尾逗号是向数组（ES3）中和字面量对象（ES5）中尾逗号看齐。</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">var arr = [1,  // Length == 3
   2,
   3,
@@ -585,7 +585,7 @@ let obj = {a: 1,  // Only 3 properties
 <li>在这引擎之下一个异步函数返回一个Promise，无论如何你在任何地方不会看到这样的一个词</li>
 </ul>
 <p>在ES6中我们可以使用Promise，Axios库向GraphQL服务器发送一个请求：</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">axios.get(`/q?query=${query}`) 
   .then(response =&gt; response.data) 
   .then(data =&gt; { 
@@ -595,7 +595,7 @@ let obj = {a: 1,  // Only 3 properties
 </code>
         </deckgo-highlight-code>
 <p>任何一个Promise库都能兼容新的异步函数，我们可以使用同步try/catch做错误处理。</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">async fetchData(url) =&gt; { 
   try { 
     const response = await axios.get(`/q?query=${query}`);
@@ -608,7 +608,7 @@ let obj = {a: 1,  // Only 3 properties
 </code>
         </deckgo-highlight-code>
 <p>异步函数返回一个Promise，所以我们像下面可以继续执行流程:</p>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">async fetchData(query) =&gt; { 
   try { 
     const response = await axios.get(`/q?query=${query}`) 
@@ -623,7 +623,7 @@ fetchData(query).then(data =&gt; {
 })
 </code>
         </deckgo-highlight-code>
-<deckgo-highlight-code js  terminal="carbon" theme="vscode" line-numbers="true" editable="true"  highlight-lines="">
+<deckgo-highlight-code js  terminal="carbon" theme="dracula" line-numbers="true"  highlight-lines="">
           <code slot="code">let axios = { // mocks 
   get: function(x) { 
   return new Promise(resolve =&gt; { 
