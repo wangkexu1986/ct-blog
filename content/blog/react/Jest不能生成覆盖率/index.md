@@ -14,7 +14,7 @@ author: "slsay"
 jest v26中使用了handlebars v4.6工具库，两个版本不兼容。
 
 ## 解决办法
-### 方法1：使用handlebars v4.5.3
+### 方法1 使用handlebars v4.5.3
 修改package-lock.json文件，置换handlebars的版本
 
 ```json
