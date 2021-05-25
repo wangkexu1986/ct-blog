@@ -7,7 +7,7 @@ const menu = [
   { name: 'JavaScript', key: 'javascript'},
   { name: 'CSS', key: 'css' },
   { name: 'React', key: 'react' },
-  { name: 'TypeScript', key: 'typescript' },
+  { name: '算法', key: 'algorithm' },
   { name: 'Nodejs', key: 'nodejs' },
   { name: 'Mongodb', key: 'mongodb' },
   { name: 'iOS', key: 'ios' },

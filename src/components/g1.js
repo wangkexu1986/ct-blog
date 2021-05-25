@@ -77,7 +77,7 @@ function G1() {
           format={(percent) => {
             return (
               <div>
-                <h5 style={{marginBottom: "2px"}}>{perWords}字</h5>
+                <h5 style={{marginBottom: "2px"}}>{Math.floor(perWords)}字</h5>
                 <Divider style={{margin: "6px 0"}}/>
                 <h6 style={{fontSize: "8px"}}>总字数：{ totalWords }字</h6>
               </div>
