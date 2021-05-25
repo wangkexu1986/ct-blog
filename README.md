@@ -61,3 +61,16 @@ author: "github账号名"
 
 ## Markdown Syntax
 https://www.gatsbyjs.com/docs/reference/markdown-syntax/
+
+
+## 常见问题
+### 1. sharp安装问题
+```shell script
+  Error: Something went wrong installing the "sharp" module
+  Cannot find module '../build/Release/sharp.node'
+  Require stack:
+```
+
+请升级系统库
+brew install vips
+
